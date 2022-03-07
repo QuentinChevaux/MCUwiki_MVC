@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+* {
+
+    margin: 0;
+    box-sizing: border-box;
+  
+}
+  
+@font-face {
+  
+    font-family: 'Marvel';
+    src: url(/MCUwiki_MVC/assets/fonts/Marvel.otf);
+  
+}
+
+.flex {
+
+    display: flex;
+
+}
+
+.align-center {
+
+    align-self: center;
+
+}
+  
+.flex_center {
+  
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  
+}
+
+.flex_between {
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.capitalize {
+
+    text-transform: capitalize;
+
+}
+
+a {
+
+    text-decoration: none;
+
+}
+
+header {
+
+    background-color: #D8041A;
+    
+}
+
+nav {
+  
+    padding-top: 35px;
+  
+}
+  
+nav li {
+  
+    list-style: none;
+  
+}
+
+nav a {
+
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.header_title {
+
+    margin-top: 20px;
+    text-decoration: none;
+  
+    color: white;
+    text-align: center;
+    font-family: Marvel;
+    font-size: 100px;
+  
+}
+  
+.header_description {
+  
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+
+    font-family: 'Roboto';
+  
+}
+
+                                                                            /* HOMEPAGE */
+
+.movie_wrapper {
+
+    background-image: url(/MCUwiki_MVC/assets/image/common/background_movie_section.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: fixed;
+  
+}
+  
+.watcher {
+  
+    background-image: url(/MCUwiki_MVC/assets/image/common/watcher_opacity_35.png);
+    background-repeat: no-repeat;
+    background-size: 75%;
+  
+}
+
+/* SORT BUTTON */
+
+.sort_button_div {
+
+    width: 50%;
+    margin: auto;
+    text-align: center;
+  
+}
+  
+.sort_button_div h2 {
+  
+    color: white;
+    padding-top: 30px;
+
+    font-family: 'Roboto';
+  
+}
+  
+.sort_button_div button {
+  
+    margin: 30px 50px;
+    padding: 10px 20px;
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: 1px solid white;
+    border-radius: 10px;
+  
+}
+
+.sort_button_div button:hover {
+
+    cursor: pointer;
+
+}
+
+/* MOVIE CARD */
+
+.card_margin {
+
+    margin: 50px;
+
+}
+
+.movie_card {
+    
+    border-radius: 10px;
+    width: 300px;
+    height: 350px;
+
+    background-position: center;
+    background-size: cover;
+
+    transition: 200ms ease-out; 
+
+}
+
+.movie_card:hover {
+
+    transform: scale(1.1);
+    transition: 200ms ease-in;
+
+    cursor: pointer;
+  
+}
+  
+.movie_card_content {
+
+    position: relative;  
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+  
+    text-align: center;
+    color: white;
+  
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.2s, opacity 0.2s, background-color 0.2s;
+    
+}
+
+.movie_card_content h2 {
+
+    padding: 10px;
+
+}
+
+.card_description, .card_date {
+
+    font-family: sans-serif;
+
+}
+
+.movie_card_content h2 {
+
+    font-family: 'Marvel';
+    font-size: 35px;
+
+}
+
+.card_description_img {
+
+    width: 20px;
+
+}
+
+.card_date {
+
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+
+}
+  
+.movie_card:hover > .movie_card_content{
+  
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    background-color: rgba(0, 0, 0, 0.75);
+  
+}
+
+                                                                        /* FILM / SERIE PAGE */
+
+.div_image, .div_texte {
+
+    margin: 50px;
+    width: 40%;
+
+}
+
+.div_texte h2 {
+
+    font-family: Marvel;
+    font-size: 100px;
+
+}
+
+.div_texte {
+
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.movie_page_card_duration_text, .movie_page_card_release_text, .movie_page_streaming {
+
+    font-size: 20px;
+    color: grey;
+
+}
+
+.movie_page_card_description_text {
+
+    color: grey;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+
+}
+
+.div_texte span {
+
+    color: black;
+
+}
+
+.div_image div {
+
+    width: 500px;
+    margin: auto;
+    height: 650px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.streaming_link_button img {
+
+    width: 150px;
+    height: 75px;
+    border-radius: 10px;
+    margin-left: 20px;
+
+}
+
+.logo_netflix {
+
+    background-color: black;
+    padding: 10px;
+
+}
+
+.logo_streaming {
+
+    transition: 200ms ease-out;
+
+}
+
+.logo_streaming:hover {
+
+    transform: scale(1.1);
+    transition: 200ms ease-out;
+
+}
+
+                                                                    /* ADMIN + DASHBOARD PAGE */
+
+/* ADMIN LOGIN INTERFACE */
+
+.admin_div, .savoir_plus {
+
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+
+}
+
+/* ADMIN INTERFACE */
+
+.deconnexion {
+
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    padding: 20px;
+
+}
+
+.deconnexion a {
+
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+
+}
+
+/* ADMIN BUTTON */
+
+.adminbutton {
+    
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    padding: 30px;
+    
+}
+
+.adminbutton button {
+    
+    font-size: 30px;
+    margin: 0 20px;
+    padding: 20px 40px;
+    border-radius: 10px;
+    
+}
+
+.confirmation_text {
+
+    text-align: center;
+
+}
+
+#movieform, #serieform, #film_date_fictive, #serie_date_fictive {
+
+    display: none;
+
+}
+
+textarea {
+
+    resize: none !important;
+
+}
+
+.btn_radio_left {
+
+    border-radius: 10px 0 0 10px !important;
+
+}
+
+.btn_radio_right {
+
+    border-radius: 0 10px 10px 0 !important;
+
+}
+
+#movieform input, #serieform input, #movieform textarea, #serieform textarea, .dashboard_form_validate_button, #admin_login input {
+
+    border-radius: 10px !important;
+
+}
