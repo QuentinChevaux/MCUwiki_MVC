@@ -61,6 +61,7 @@
 
             }
 
+         
             if(isset($_SESSION['serie_success'])) {
 
             ?>
@@ -109,7 +110,7 @@
             <div class="form-group">
                 
                 <label for="description" class="form-label mt-4">Description : </label>
-                <textarea name="description" rows="10" class="form-control" required></textarea>
+                <textarea name="description" rows="6" class="form-control" required></textarea>
         
             </div>
 
@@ -194,7 +195,7 @@
         <div class="form-group">
             
             <label for="description" class="form-label mt-4">Description : </label>
-            <textarea name="description" rows="3" class="form-control" required></textarea>
+            <textarea name="description" rows="6" class="form-control" required></textarea>
 
         </div>
 

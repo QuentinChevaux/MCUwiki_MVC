@@ -120,8 +120,6 @@ use PDO_custom;
 
                             $_SESSION['serie_success']  = 'La Serie à bien été ajoutée à la base de donnée';
 
-                            header('Location: ' . Config::DASHBOARD);
-
                         }
                     
                     } else {
