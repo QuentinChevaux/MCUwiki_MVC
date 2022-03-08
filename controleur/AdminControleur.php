@@ -18,11 +18,15 @@ use PDO_custom;
 
             if(!isset($_SESSION['admin'])) {
 
-                $error = false;
+                $login = '';
 
                 if(isset($_POST['valider'])) {
     
                     $login = AdminModel::connexionAdmin($_POST['login']);
+
+                    var_dump($login);
+
+                    die();
 
                     if(password_verify($_POST['password'], $login['password']) ) {
 
@@ -32,13 +36,9 @@ use PDO_custom;
 
                     }
             
-                } else {
-
-                    $error = true;
-
                 }
     
-                $parametres = compact('error');
+                $parametres = compact('login');
                 
                 $this -> affichage($parametres, 'connexion');
 
@@ -66,7 +66,7 @@ use PDO_custom;
 
                     $filename = $_FILES['image']['name'];
                     
-                    $target_file = './assets/image/films/' . $filename;
+                    $target_file = './assets/image/media/' . $filename;
 
                     $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
                     $file_extension = strtolower($file_extension);
@@ -77,15 +77,19 @@ use PDO_custom;
 
                         if(move_uploaded_file($_FILES['image']['tmp_name'],$target_file)){
 
-                            AdminModel::addMedia($_POST['titre'], $_POST['description'], $_POST['date'], $_POST['date_fictive'], $filename, $_POST['tmdb']);
+                            $search = [ ' ', '.', '\'', ':', '-', '?', 'à', 'â', 'Á', 'À', 'Â','é', 'è', 'ê', 'É', 'È', 'Ê'];
+
+                            $replace = [ '', '', '', '', '', '', 'a', 'a', 'a', 'a', 'a', 'e', 'e', 'e', 'e', 'e', 'e' ];
+
+                            $slug = strtolower(str_replace($search, $replace, $_POST['titre']));
+
+                            AdminModel::addMedia( $_POST['titre'], $slug, $_POST['description'], $_POST['date'], $_POST['date_fictive'], $filename, $_POST['tmdb']);
 
                                 $idOeuvre = PDO_custom::getInstance() -> lastInsertId();  // Singleton
 
                             AdminModel::addMovieDuree($idOeuvre, $_POST['duree']);
 
                             $_SESSION['movie_success']  = 'Le Film à bien été ajoutée à la base de donnée';
-
-                            header('Location: ' . Config::DASHBOARD);
 
                         }
                     
@@ -101,7 +105,7 @@ use PDO_custom;
 
                     $filename = $_FILES['image']['name'];
                     
-                    $target_file = './assets/image/series/' . $filename;
+                    $target_file = './assets/image/media/' . $filename;
 
                     $file_extension = pathinfo($target_file, PATHINFO_EXTENSION);
                     $file_extension = strtolower($file_extension);
@@ -112,7 +116,13 @@ use PDO_custom;
 
                         if(move_uploaded_file($_FILES['image']['tmp_name'],$target_file)){
 
-                            AdminModel::addMedia($_POST['titre'], $_POST['description'], $_POST['date'], $_POST['date_fictive'], $filename, $_POST['tmdb']);
+                            $search = [ ' ', '.', '\'', ':', '-', '?', 'à', 'â', 'Á', 'À', 'Â','é', 'è', 'ê', 'É', 'È', 'Ê'];
+
+                            $replace = [ '', '', '', '', '', '', 'a', 'a', 'a', 'a', 'a', 'e', 'e', 'e', 'e', 'e', 'e' ];
+
+                            $slug = strtolower(str_replace($search, $replace, $_POST['titre']));
+
+                            AdminModel::addMedia( $_POST['titre'], $slug, $_POST['description'], $_POST['date'], $_POST['date_fictive'], $filename, $_POST['tmdb']);
 
                                 $idOeuvre = PDO_custom::getInstance() -> lastInsertId(); // Singleton
 
@@ -137,6 +147,12 @@ use PDO_custom;
                 header('Location: ' . Config::CONNEXION);
 
             }
+
+        }
+
+        public function streaming_availibility() {
+
+            $this -> affichage([], 'streaming_availibility');
 
         }
 

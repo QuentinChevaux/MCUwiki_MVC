@@ -18,6 +18,21 @@
 
         }
 
+        static function fetchMediaById($slug) {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('SELECT * FROM oeuvre 
+                                              LEFT JOIN film ON oeuvre.id = film.id 
+                                              LEFT JOIN serie ON oeuvre.id = serie.id
+                                              WHERE `slug` = ?');
+
+            $requete -> execute([ $slug ]);
+
+            return $requete -> fetch();
+
+        }
+
         // INSERT AVEC FILM OU SERIE
 
         // FAIRE UN SELECT POUR RECUPERER L'ID DU FILM OU DE LA SERIE

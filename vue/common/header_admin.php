@@ -22,7 +22,19 @@
 
                 <a href="<?= Config::INDEX ?>">Retourner a la Page Principale</a>
 
-                <a href="">Streaming Availibility</a>
+                <?php
+                
+                    if($_SERVER['REQUEST_URI'] != Config::STREAMING_AVAILIBILITY) {
+                    
+                        ?>
+
+                            <a href="<?= Config::STREAMING_AVAILIBILITY ?>">Streaming Availibility</a>
+                    
+                        <?php 
+
+                    }
+
+                ?>
 
                 <a href="<?= Config::DECONNEXION_ADMIN ?>">Se Deconnecter</a>
 

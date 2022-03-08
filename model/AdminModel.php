@@ -18,9 +18,10 @@
 
         }
 
-        static function addMedia($titre, $description, $date, $date_fictive, $image, $tmdb) {
+        static function addMedia($titre, $slug, $description, $date, $date_fictive, $image, $tmdb) {
 
             $connexion = PDO_custom::getInstance();
+
 
             // Si l'oeuvre est à la suite chronologique on lui ajoute une date fictive supérieure à
             // celle plus haute de la base de donnée
@@ -38,17 +39,17 @@
                         
                     $last_date_incremented = date('Y-m-d', strtotime($last['date_fictive'] .  '+2 day'));
 
-                $requete = $connexion -> prepare('INSERT INTO oeuvre (`titre`, `description`, `date`, `date_fictive`, `image`, `tmdb`) VALUES (?, ?, ?, ?, ?, ?)');
+                $requete = $connexion -> prepare('INSERT INTO oeuvre (`titre`, `slug`, `description`, `date`, `date_fictive`, `image`, `tmdb`) VALUES (?, ?, ?, ?, ?, ?, ?)');
 
-                $requete -> execute([ $titre, $description, $date, $last_date_incremented, $image, $tmdb ]);
+                $requete -> execute([ $titre, $slug, $description, $date, $last_date_incremented, $image, $tmdb ]);
                 
             // Si l'oeuvre n'est pas à la suite on ajoute une date définie par l'utilisateur
 
             } else {
 
-                $requete = $connexion -> prepare('INSERT INTO oeuvre (`titre`, `description`, `date`, `date_fictive`, `image`, `tmdb`) VALUES (?, ?, ?, ?, ?, ?)');
+                $requete = $connexion -> prepare('INSERT INTO oeuvre (`titre`, `slug`, `description`, `date`, `date_fictive`, `image`, `tmdb`) VALUES (?, ?, ?, ?, ?)');
                     
-                $requete -> execute([ $titre, $description, $date, $date_fictive, $image, $tmdb ]);
+                $requete -> execute([ $titre, $slug, $description, $date, $date_fictive, $image, $tmdb ]);
 
             }
 

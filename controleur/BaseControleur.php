@@ -4,7 +4,7 @@
 
     class BaseControleur {
 
-        public function affichage($parametres = [], $vue = 'liste') {
+        public function affichage($parametres = [], $vue) {
 
             extract($parametres);
 

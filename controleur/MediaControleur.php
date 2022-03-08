@@ -12,7 +12,17 @@
 
             $parametre = compact('liste');
 
-            $this -> affichage($parametre);
+            $this -> affichage($parametre, 'liste');
+
+        }
+
+        public function afficher($slug) {
+
+            $media = MediaModel::fetchMediaById($slug);
+
+            $parametres = compact('media');
+
+            $this -> affichage($parametres, 'afficher');
 
         }
 

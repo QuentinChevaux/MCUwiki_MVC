@@ -19,6 +19,7 @@
             if(self::$instance == null) {
 
                 self::$instance = new PDO_custom();
+                
             }    
                 
             return self::$instance;

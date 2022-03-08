@@ -37,9 +37,9 @@
 
                     <div class="card_margin">
 
-                        <a href="./film.php?id= <?= $media['id'] ?>">
-                    
-                            <div class='movie_card' style="background-image: url(/MCUwiki_MVC/assets/image/films/<?= $media['image'] ?>)">
+                        <a href="<?= Config::AFFICHER . $media['slug'] ?>">
+
+                            <div class='movie_card' style="background-image: url(/MCUwiki_MVC/assets/image/media/<?= $media['image'] ?>)">
             
                                 <div class="movie_card_content">
             
@@ -58,13 +58,13 @@
                                 
                             </div>
 
-                        </a>
+                        <!-- </a> -->
 
                     </div>
         
-                <?php      
-                
-                    }
+                <?php 
+
+                }
 
                 ?>
 
