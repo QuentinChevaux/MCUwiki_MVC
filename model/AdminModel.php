@@ -10,7 +10,7 @@
 
             $connexion = PDO_custom::getInstance();
 
-            $requete = $connexion -> prepare('SELECT * FROM user JOIN `admin` ON user.id = admin.id WHERE `login` = ?');
+            $requete = $connexion -> prepare('SELECT * FROM user JOIN `admin` ON user.id = `admin`.id WHERE `login` = ?');
 
             $requete -> execute([ $login ]);
 

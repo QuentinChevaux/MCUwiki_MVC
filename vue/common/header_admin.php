@@ -16,11 +16,17 @@
 
 <body>
 
+    <?php
+
+        if(isset($_SESSION['admin'])) {
+
+    ?>
+
     <header>
 
             <div class="deconnexion flex_between">
 
-                <a href="<?= Config::INDEX ?>">Retourner a la Page Principale</a>
+                <a href="<?= Config::INDEX ?>">Page Principale</a>
 
                 <?php
                 
@@ -36,8 +42,28 @@
 
                 ?>
 
+                <?php
+                
+                    if($_SERVER['REQUEST_URI'] == Config::STREAMING_AVAILIBILITY) {
+                
+                        ?>
+
+                            <a href="<?= Config::DASHBOARD ?>">Retour au Dashboard</a>
+                
+                        <?php 
+
+                    }
+
+                ?>
+
                 <a href="<?= Config::DECONNEXION_ADMIN ?>">Se Deconnecter</a>
 
             </div>        
 
     </header>
+
+    <?php
+
+        }
+
+    ?>

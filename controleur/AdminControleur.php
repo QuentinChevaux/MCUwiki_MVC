@@ -24,15 +24,27 @@ use PDO_custom;
     
                     $login = AdminModel::connexionAdmin($_POST['login']);
 
-                    var_dump($login);
+                    if($login) {
 
-                    die();
+                        if(password_verify($_POST['password'], $login['password']) ) {
 
-                    if(password_verify($_POST['password'], $login['password']) ) {
+                            $_SESSION['admin'] = $_POST['login'];
 
-                        $_SESSION['admin'] = $_POST['login'];
+                            header('Location: ' . Config::DASHBOARD);
 
-                        header('Location: ' . Config::DASHBOARD);
+                        } else {
+
+                            echo '<script>';
+                            echo 'alert("Mot de Passe Incorrect !")';
+                            echo '</script>';
+
+                        }
+
+                    } else {
+
+                        $_SESSION['access_denied'] = 'Vous n\'avez pas accès à cette Page !';
+
+                        header('Location: ' . Config::INDEX);
 
                     }
             
@@ -152,7 +164,15 @@ use PDO_custom;
 
         public function streaming_availibility() {
 
-            $this -> affichage([], 'streaming_availibility');
+            if(isset($_SESSION['admin'])) {
+
+                $this -> affichage([], 'streaming_availibility');
+
+            } else {
+
+                header('Location: ' . Config::INDEX);
+
+            }
 
         }
 

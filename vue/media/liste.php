@@ -10,6 +10,38 @@
 
 <section class="movie_wrapper">
 
+    <?php 
+        
+        if(isset($_SESSION['access_denied'])) {
+            
+    ?>
+        <div class="access_denied_father">
+
+            <div class="access_denied">
+
+                <h2><?= $_SESSION['access_denied'] ?></h2>
+
+            </div>
+            
+        </div>
+
+        <script>
+                
+        setTimeout(function(){
+            $('.access_denied').slideToggle();
+            $('.access_denied_father').slideToggle();
+        }, 5000);
+
+        </script>
+
+    <?php 
+                    
+        }
+
+        unset($_SESSION['access_denied']);
+                        
+    ?>
+
     <div class="watcher">
 
         <div>

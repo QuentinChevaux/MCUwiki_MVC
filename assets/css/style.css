@@ -126,6 +126,25 @@ nav a {
 
 /* SORT BUTTON */
 
+.access_denied_father {
+
+    padding-top: 30px;
+    width: 35%;
+    margin: auto;
+    text-align: center;
+
+}
+
+.access_denied {
+
+    background-color: #F7DDDC;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Roboto';
+    color: #82322f;
+
+}
+
 .sort_button_div {
 
     width: 50%;
@@ -354,10 +373,7 @@ nav a {
 /* ADMIN INTERFACE */
 
 .deconnexion {
-
-    width: 100%;
-    margin: auto;
-    text-align: center;
+    
     font-size: 50px;
     padding: 20px;
 
