@@ -4,6 +4,8 @@
 
     use model\MediaModel;
 
+    use Config;
+
     class MediaControleur extends BaseControleur {
 
         public function onload() {
@@ -40,9 +42,29 @@
 
             $media = MediaModel::fetchMediaById($slug);
 
-            $parametres = compact('media');
+            if($media) {
 
-            $this -> affichage($parametres, 'afficher');
+                $parametres = compact('media');
+
+                $this -> affichage($parametres, 'afficher');
+
+            } else {
+
+                $_SESSION['access_denied'] = 'Erreur';
+
+                header('Location: ' . Config::INDEX);
+
+            }
+
+        }
+
+        public function film() {
+
+            $movie = MediaModel::fetchAllMovie();
+
+            $parametres = compact('movie');
+
+            $this -> affichage($parametres, 'film');
 
         }
 

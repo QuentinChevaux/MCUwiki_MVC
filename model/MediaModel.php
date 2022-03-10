@@ -18,6 +18,18 @@
 
         }
 
+        static function fetchAllMovie() {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('SELECT * FROM oeuvre LEFT JOIN film ON oeuvre.id = film.id');
+        
+            $requete -> execute();
+
+            return $requete -> fetchAll();
+
+        }
+
         static function fetchAllMediaOrderByChronologie() {
 
             $connexion = PDO_custom::getInstance();
