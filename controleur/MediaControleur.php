@@ -50,9 +50,7 @@
 
             } else {
 
-                $_SESSION['access_denied'] = 'Erreur';
-
-                header('Location: ' . Config::INDEX);
+                header('Location: ' . Config::FILM);
 
             }
 

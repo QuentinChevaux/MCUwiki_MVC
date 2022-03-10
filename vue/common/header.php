@@ -34,8 +34,19 @@
     
         <a href="<?= Config::INDEX ?>" class="header_title"> <h1>MCUwiki</h1> </a>
 
-        <h2 class="header_description">Bienvenu sur MCUwiki le Site qui recense tous les Films / Series de Marvel, vous pourrez y retrouver la liste complete ordonnée <br />
-                                       de tous les Films Marvel, la liste de tous les Personnages et bien plus encore !
-        </h2>
+        <?php 
+
+            if(($_SERVER['REQUEST_URI'] == Config::INDEX)) {
+                ?>
+
+                    <h2 class="header_description">Bienvenu sur MCUwiki le Site qui recense tous les Films / Series de Marvel, vous pourrez y retrouver la liste complete ordonnée <br />
+                                                    de tous les Films Marvel, la liste de tous les Personnages et bien plus encore !
+                    </h2>
+
+        <?php
+
+            }
+
+        ?>
                 
     </header>
