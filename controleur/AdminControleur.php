@@ -4,7 +4,7 @@
 
     use Config;
     use model\AdminModel;
-use PDO_custom;
+    use PDO_custom;
 
     class AdminControleur extends BaseControleur {
 
@@ -166,7 +166,160 @@ use PDO_custom;
 
             if(isset($_SESSION['admin'])) {
 
-                $this -> affichage([], 'streaming_availibility');
+                $message = '';
+
+                if(isset($_POST['update_media'])) {
+			
+                    $medias = AdminModel::fetchAllMedia();
+
+                    foreach($medias as $media) {
+
+                        if($media['duree']) {
+
+                            $curl = curl_init();
+        
+                                curl_setopt_array($curl, [
+                                CURLOPT_URL => "https://streaming-availability.p.rapidapi.com/get/basic?country=fr&tmdb_id=movie%2F". $media['tmdb'] . "&output_language=en",
+                                CURLOPT_RETURNTRANSFER => true,
+                                CURLOPT_FOLLOWLOCATION => true,
+                                CURLOPT_ENCODING => "",
+                                CURLOPT_MAXREDIRS => 10,
+                                CURLOPT_TIMEOUT => 30,
+                                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                                CURLOPT_CUSTOMREQUEST => "GET",
+                                CURLOPT_HTTPHEADER => [
+                                    "x-rapidapi-host: streaming-availability.p.rapidapi.com",
+                                    "x-rapidapi-key: c259f58326msh81c225d8de2c3f6p17abf5jsn926f3db2d353"
+                                ],
+                            ]);
+
+                        } else {
+
+                            $curl = curl_init();
+        
+                                curl_setopt_array($curl, [
+                                CURLOPT_URL => "https://streaming-availability.p.rapidapi.com/get/basic?country=fr&tmdb_id=tv%2F". $media['tmdb'] . "&output_language=en",
+                                CURLOPT_RETURNTRANSFER => true,
+                                CURLOPT_FOLLOWLOCATION => true,
+                                CURLOPT_ENCODING => "",
+                                CURLOPT_MAXREDIRS => 10,
+                                CURLOPT_TIMEOUT => 30,
+                                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                                CURLOPT_CUSTOMREQUEST => "GET",
+                                CURLOPT_HTTPHEADER => [
+                                    "x-rapidapi-host: streaming-availability.p.rapidapi.com",
+                                    "x-rapidapi-key: c259f58326msh81c225d8de2c3f6p17abf5jsn926f3db2d353"
+                                ],
+                            ]);
+
+                        }
+
+                        $response = curl_exec($curl);
+                        $error = curl_error($curl);
+        
+                        curl_close($curl);
+        
+                        if ($error) {
+        
+                            echo "cURL Error #:" . $error;
+        
+                        } else {
+        
+                            if (preg_match("/disney/", $response, $matches)) {
+
+                                // Si c'est un film et que la Plateforme dans la base de donnée est différente
+
+                                if($media['duree'] && $media['streaming_platform'] != $matches[0]) {
+
+                                    AdminModel::updateStreamingPlatform($matches[0], $media['id']);
+
+                                     $message .= 'Mis ' . $matches[0] . ' dans ' . $media['titre'];
+
+                                }
+
+                                $response = explode('{', $response);
+                                    
+                                $link = $response[6];
+                                    
+                                $link = explode('"', $link);
+
+                                    if($link[3] != $media['streaming_link']) {
+
+                                        // Si lien est différent dans la Base de Donnée
+
+                                        AdminModel::updateStreamingLink($link[3], $media['tmdb']);
+
+                                        $message .= ' avec le lien : ' . $link[3] . '<br />';
+                                    
+                                    }
+        
+                            } else if (preg_match("/netflix/", $response, $matches)) {
+        
+                                if($media['duree'] && $media['streaming_platform'] != $matches[0]) {
+
+                                    // Si c'est un film et que la Plateforme dans la base de donnée est différente
+
+                                    AdminModel::updateStreamingPlatform($matches[0], $media['id']);
+
+                                    $message .= 'Mis ' . $matches[0] . ' dans ' . $media['titre'];
+
+                                }
+
+                                $response = explode('{', $response);
+                                    
+                                $link = $response[6];
+                                    
+                                $link = explode('"', $link);
+
+                                    if($link[3] != $media['streaming_link']) {
+
+                                        // Si lien est différent dans la Base de Donnée
+
+                                        AdminModel::updateStreamingLink($link[3], $media['tmdb']);
+
+                                        $message .= ' avec le lien : ' . $link[3] . '<br />';
+                                    
+                                    }
+        
+                            } else if (preg_match("/prime/", $response, $matches)) {
+        
+                                if($media['duree'] && $media['streaming_platform'] != $matches[0]) {
+
+                                    // Si c'est un film et que la Plateforme dans la base de donnée est différente
+
+                                    AdminModel::updateStreamingPlatform($matches[0], $media['id']);
+
+                                    $message .= 'Mis ' . $matches[0] . ' dans ' . $media['titre'];
+
+                                }
+
+                                $response = explode('{', $response);
+                                    
+                                $link = $response[6];
+                                    
+                                $link = explode('"', $link);
+
+                                    if($link[3] != $media['streaming_link']) {
+
+                                        // Si lien est différent dans la Base de Donnée
+
+                                        AdminModel::updateStreamingLink($link[3], $media['tmdb']);
+
+                                        $message .= ' avec le lien : ' . $link[3] . '<br />';
+                                    
+                                    }
+        
+                            } 
+                            
+                        }
+
+                    }
+        
+                }
+
+                $parametres = compact('message');
+
+                $this -> affichage($parametres, 'streaming_availibility');
 
             } else {
 

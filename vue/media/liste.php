@@ -31,6 +31,7 @@
             $('.access_denied').slideToggle();
             $('.access_denied_father').slideToggle();
         }, 5000);
+        
 
         </script>
 
@@ -50,9 +51,9 @@
 
                 <h2>Choissisez comment vous voulez triez les Films : </h2>
 
-                    <button>Ordre Chronologique</button>
+                    <button onclick='window.location.href="<?= Config::SORT_CHRONOLOGIE ?>"'>Ordre Chronologique</button>
 
-                    <button>Date de Sortie</button>
+                    <button onclick='window.location.href="<?= Config::SORT_DATE ?>"'>Date de Sortie</button>
 
             </div>
 
@@ -62,8 +63,8 @@
                 
                     foreach($liste as $media) {
 
-                        // $date = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
-                        // $date_fr = $date -> format(strtotime($tableau[$i]['date']));
+                        $date = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
+                        $date_fr = $date -> format(strtotime($media['date']));
 
                 ?>
 
@@ -84,13 +85,13 @@
 
                                     </div>
 
-                                    <!-- <p class="card_date capitalize"> <?= $date_fr ?> </p> -->
+                                    <p class="card_date capitalize"> <?= $date_fr ?> </p>
             
                                 </div>
                                 
                             </div>
 
-                        <!-- </a> -->
+                        </a>
 
                     </div>
         

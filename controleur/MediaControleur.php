@@ -10,9 +10,29 @@
 
             $liste = MediaModel::fetchAllMedia();
 
-            $parametre = compact('liste');
+            $parametres = compact('liste');
 
-            $this -> affichage($parametre, 'liste');
+            $this -> affichage($parametres, 'liste');
+
+        }
+
+        public function ordrechronologique() {
+
+            $liste = MediaModel::fetchAllMediaOrderByChronologie();
+
+            $parametres = compact('liste');
+
+            $this -> affichage($parametres, 'liste');
+
+        }
+
+        public function ordredate() {
+
+            $liste = MediaModel::fetchAllMediaOrderByDate();
+
+            $parametres = compact('liste');
+
+            $this -> affichage($parametres, 'liste');
 
         }
 

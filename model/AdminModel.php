@@ -75,6 +75,41 @@
 
         }
 
+        static function fetchAllMedia() {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('SELECT oeuvre.id, oeuvre.titre, oeuvre.tmdb, oeuvre.streaming_link, film.duree, film.streaming_platform, serie.nbepisode 
+                                              FROM oeuvre
+                                              LEFT JOIN film ON oeuvre.id = film.id 
+                                              LEFT JOIN serie ON oeuvre.id = serie.id');
+
+            $requete -> execute();
+
+            return $requete -> fetchAll();
+
+        }
+
+        static function updateStreamingPlatform($platform, $id) {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('UPDATE film SET streaming_platform = ? WHERE id = ?');
+        
+            $requete -> execute([$platform, $id]);
+
+        }
+
+        static function updateStreamingLink($link, $tmdb) {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('UPDATE oeuvre SET streaming_link = ? WHERE tmdb = ?');
+
+            $requete -> execute([$link, $tmdb]);
+
+        }
+
     }
 
 ?>

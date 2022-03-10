@@ -10,7 +10,31 @@
 
             $connexion = PDO_custom::getInstance();
 
-            $requete = $connexion -> prepare('SELECT * FROM oeuvre LEFT JOIN film ON oeuvre.id = film.id LEFT JOIN serie ON oeuvre.id = serie.id');
+            $requete = $connexion -> prepare('SELECT * FROM oeuvre');
+
+            $requete -> execute();
+
+            return $requete -> fetchAll();
+
+        }
+
+        static function fetchAllMediaOrderByChronologie() {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('SELECT * FROM oeuvre ORDER BY `date_fictive`');
+
+            $requete -> execute();
+
+            return $requete -> fetchAll();
+
+        }
+
+        static function fetchAllMediaOrderByDate() {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('SELECT * FROM oeuvre ORDER BY `date`');
 
             $requete -> execute();
 
@@ -32,12 +56,6 @@
             return $requete -> fetch();
 
         }
-
-        // INSERT AVEC FILM OU SERIE
-
-        // FAIRE UN SELECT POUR RECUPERER L'ID DU FILM OU DE LA SERIE
-
-        // FAIRE UN NOUVEL INSERT ET METTRE L'ID DU FILM OU DE LA SERIE PAR RAPPORT A L'ID RECUPERE
 
     }
 

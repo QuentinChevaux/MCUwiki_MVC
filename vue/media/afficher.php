@@ -82,7 +82,7 @@
 
                         <div class="logo_streaming">
 
-                            <a href="<?= $media['streaming_link'] ?>" target='_blank'> <img src="./assets/image/disney+_logo.jpg" alt="Logo disney+" /></a>
+                            <a href="<?= $media['streaming_link'] ?>" target='_blank'> <img src="<?= Config::LOGO_DISNEY ?>" alt="Logo disney+" /></a>
 
                         </div>
 
@@ -105,7 +105,7 @@
 
                         <div class="logo_streaming">
 
-                            <a href="<?= $media['streaming_link'] ?>" target='_blank'> <img src="./assets/image/netflix_logo.png" alt="Logo Netflix" class="logo_netflix"/></a>
+                            <a href="<?= $media['streaming_link'] ?>" target='_blank'> <img src="<?= Config::LOGO_NETFLIX ?>" alt="Logo Netflix" class="logo_netflix"/></a>
 
                         </div>
 
@@ -128,7 +128,7 @@
 
                         <div class="logo_streaming">
 
-                            <a href="<?= $media['streaming_link'] ?>" target='_blank'> <img src="./assets/image/netflix_logo.png" alt="Logo Netflix" class="logo_netflix"/></a>
+                            <a href="<?= $media['streaming_link'] ?>" target='_blank'> <img src="<?= Config::LOGO_PRIME ?>" alt="Logo Prime" class="logo_prime"/></a>
 
                         </div>
 
