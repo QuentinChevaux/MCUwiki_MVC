@@ -58,11 +58,33 @@
 
         public function film() {
 
-            $movie = MediaModel::fetchAllMovie();
+            $movie = '';
+
+            if(isset($_POST['valider'])) {
+
+                $movie = MediaModel::fetchFilmLike($_POST['search']);
+
+            }
 
             $parametres = compact('movie');
 
             $this -> affichage($parametres, 'film');
+
+        }
+
+        public function serie() {
+
+            $serie = '';
+
+            if(isset($_POST['valider'])) {
+
+                $serie = MediaModel::fetchSerieLike($_POST['search']);
+
+            }
+
+            $parametres = compact('serie');
+
+            $this -> affichage($parametres, 'serie');
 
         }
 

@@ -18,18 +18,6 @@
 
         }
 
-        static function fetchAllMovie() {
-
-            $connexion = PDO_custom::getInstance();
-
-            $requete = $connexion -> prepare('SELECT * FROM oeuvre LEFT JOIN film ON oeuvre.id = film.id');
-        
-            $requete -> execute();
-
-            return $requete -> fetchAll();
-
-        }
-
         static function fetchAllMediaOrderByChronologie() {
 
             $connexion = PDO_custom::getInstance();
@@ -66,6 +54,30 @@
             $requete -> execute([ $slug ]);
 
             return $requete -> fetch();
+
+        }
+
+        static function fetchFilmLike($text) {
+
+            $connexion= PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare("SELECT * FROM oeuvre JOIN film ON oeuvre.id = film.id WHERE titre LIKE :requete ");
+
+            $requete -> execute([ ':requete' => '%' . $text . '%' ]);
+
+            return $requete -> fetchAll();
+
+        }
+
+        static function fetchSerieLike($text) {
+
+            $connexion= PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare("SELECT * FROM oeuvre JOIN serie ON oeuvre.id = serie.id WHERE titre LIKE :requete ");
+
+            $requete -> execute([ ':requete' => '%' . $text . '%' ]);
+
+            return $requete -> fetchAll();
 
         }
 

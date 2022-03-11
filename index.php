@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    ob_start();
 
     include 'AutoLoader.php';
     AutoLoader::start();
@@ -50,6 +51,8 @@
     $controleur = new $nomcontroleur();
 
     $controleur -> $nomaction($parametre);
+    
+    ob_flush();
 
 ?>
 

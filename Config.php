@@ -6,6 +6,7 @@
         const INDEX = '/mcuwiki_mvc/';
         const AFFICHER = '/mcuwiki_mvc/media/afficher/';
         const FILM = '/mcuwiki_mvc/media/film';
+        const SERIE = '/mcuwiki_mvc/media/serie';
 
         const SORT_CHRONOLOGIE = '/mcuwiki_mvc/media/ordrechronologique';
         const SORT_DATE = '/mcuwiki_mvc/media/ordredate';

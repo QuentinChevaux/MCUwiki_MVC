@@ -27,11 +27,10 @@
 
         <script>
                 
-        setTimeout(function(){
-            $('.access_denied').slideToggle();
-            $('.access_denied_father').slideToggle();
-        }, 5000);
-        
+            setTimeout(function(){
+                $('.access_denied').slideToggle();
+                $('.access_denied_father').slideToggle();
+            }, 5000);            
 
         </script>
 

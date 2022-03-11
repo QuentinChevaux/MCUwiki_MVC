@@ -1,6 +1,6 @@
 <?php 
 
-    $title = 'Page Film';
+    $title = 'Page Serie';
 
     include './vue/common/header.php';
 
@@ -10,7 +10,7 @@
 
         <div class="flex_center search_div">
 
-            <input type="text" name="search" placeholder="Chercher un Film..." />
+            <input type="text" name="search" placeholder="Chercher une Serie..." />
 
             <input type="submit" name="valider" value="Rechercher &#128269;" />
 
@@ -22,17 +22,17 @@
 
         if(isset($_POST['valider'])) {
 
-            if(isset($movie) && $movie != null) {
+            if(isset($serie) && $serie != null) {
 
             ?>
 
                 <div class="search_title_father">
 
-                <div class="search_title">
+                    <div class="search_title">
 
-                    <h2>Résultat pour : ' <?= $_POST['search'] ?> '</h2>
+                        <h2>Résultat pour : ' <?= $_POST['search'] ?> '</h2>
 
-                </div>
+                    </div>
 
                 </div>
 
@@ -42,22 +42,22 @@
                 
                         <?php
                 
-                            foreach($movie as $film) {
+                            foreach($serie as $show) {
 
                                 $date = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
-                                $date_fr = $date -> format(strtotime($film['date']));
+                                $date_fr = $date -> format(strtotime($show['date']));
 
                         ?>
 
                             <div class="card_margin">
 
-                                <a href="<?= Config::AFFICHER . $film['slug'] ?>">
+                                <a href="<?= Config::AFFICHER . $show['slug'] ?>">
 
-                                    <div class='movie_card' style="background-image: url(/MCUwiki_MVC/assets/image/media/<?= $film['image'] ?>)">
+                                    <div class='movie_card' style="background-image: url(/MCUwiki_MVC/assets/image/media/<?= $show['image'] ?>)">
             
                                         <div class="movie_card_content">
             
-                                            <h2> <?= $film['titre'] ?> </h2>
+                                            <h2> <?= $show['titre'] ?> </h2>
 
                                             <div class="savoir_plus">
 

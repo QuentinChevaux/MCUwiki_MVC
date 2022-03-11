@@ -24,9 +24,9 @@
     
                 <li><a href="./lexique.php">Lexique</a></li>
     
-                <li><a href="./films.php">Films</a></li>
+                <li><a href="<?= Config::FILM ?>">Films</a></li>
     
-                <li><a href="./series.php">Series</a></li>
+                <li><a href="<?= Config::SERIE ?>">Series</a></li>
     
             </ul>
     
