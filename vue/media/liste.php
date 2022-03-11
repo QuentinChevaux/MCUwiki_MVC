@@ -15,7 +15,7 @@
         if(isset($_SESSION['access_denied'])) {
             
     ?>
-        <div class="access_denied_father">
+        <div class="access_denied_father select_none">
 
             <div class="access_denied">
 
@@ -48,7 +48,7 @@
 
             <div class="sort_button_div">
 
-                <h2>Choissisez comment vous voulez triez les Films : </h2>
+                <h2 class="select_none">Choissisez comment vous voulez triez les Medias: </h2>
 
                     <button onclick='window.location.href="<?= Config::SORT_CHRONOLOGIE ?>"'>Ordre Chronologique</button>
 

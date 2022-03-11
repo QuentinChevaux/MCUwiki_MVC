@@ -18,7 +18,7 @@
 
         <nav>
     
-            <ul class="flex_center">
+            <ul class="flex_center select_none">
     
                 <li><a href="<?= Config::INDEX ?>">Home</a></li>
     
@@ -36,10 +36,10 @@
 
         <?php 
 
-            if(($_SERVER['REQUEST_URI'] == Config::INDEX)) {
+            if($_SERVER['REQUEST_URI'] == Config::INDEX || $_SERVER['REQUEST_URI'] == Config::SORT_CHRONOLOGIE || $_SERVER['REQUEST_URI'] == Config::SORT_DATE ) {
                 ?>
 
-                    <h2 class="header_description">Bienvenu sur MCUwiki le Site qui recense tous les Films / Series de Marvel, vous pourrez y retrouver la liste complete ordonnée <br />
+                    <h2 class="header_description select_none">Bienvenu sur MCUwiki le Site qui recense tous les Films / Series du MCU, vous pourrez y retrouver la liste complete ordonnée <br />
                                                     de tous les Films Marvel, la liste de tous les Personnages et bien plus encore !
                     </h2>
 

@@ -15,6 +15,12 @@
   
 }
 
+.select_none {
+
+    user-select: none;
+
+}
+
 .flex {
 
     display: flex;

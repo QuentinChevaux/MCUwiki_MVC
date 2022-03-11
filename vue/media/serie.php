@@ -8,9 +8,9 @@
 
     <form action="" method="POST">
 
-        <div class="flex_center search_div">
+        <div class="flex_center search_div select_none">
 
-            <input type="text" name="search" placeholder="Chercher une Serie..." />
+            <input type="text" name="search" placeholder="Chercher une Serie..." autofocus/>
 
             <input type="submit" name="valider" value="Rechercher &#128269;" />
 
@@ -26,7 +26,7 @@
 
             ?>
 
-                <div class="search_title_father">
+                <div class="search_title_father select_none">
 
                     <div class="search_title">
 
@@ -91,7 +91,7 @@
             } else {
                 ?>
 
-                <div class="search_result_none_father">
+                <div class="search_result_none_father select_none">
 
                     <div class="search_result_none">
     
