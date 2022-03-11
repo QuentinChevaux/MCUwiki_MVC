@@ -10,7 +10,7 @@
 
         public function onload() {
 
-            $liste = MediaModel::fetchAllMedia();
+            $liste = MediaModel::fetchAllMediaOrderByDate();
 
             $parametres = compact('liste');
 

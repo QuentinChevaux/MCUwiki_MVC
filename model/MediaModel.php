@@ -6,18 +6,6 @@
 
     class MediaModel {
 
-        static function fetchAllMedia() {
-
-            $connexion = PDO_custom::getInstance();
-
-            $requete = $connexion -> prepare('SELECT * FROM oeuvre');
-
-            $requete -> execute();
-
-            return $requete -> fetchAll();
-
-        }
-
         static function fetchAllMediaOrderByChronologie() {
 
             $connexion = PDO_custom::getInstance();
