@@ -52,7 +52,7 @@
 
                     <button onclick='window.location.href="<?= Config::SORT_CHRONOLOGIE ?>"'>Ordre Chronologique</button>
 
-                    <button onclick='window.location.href="<?= Config::SORT_DATE ?>"'>Date de Sortie</button>
+                    <button onclick='window.location.href="<?= Config::INDEX ?>"'>Date de Sortie</button>
 
             </div>
 

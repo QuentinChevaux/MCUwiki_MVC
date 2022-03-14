@@ -13,16 +13,16 @@
 </head>
 
 <body>
-
+    
     <header>
 
-        <nav>
+        <nav class="header_nav">
     
             <ul class="flex_center select_none">
     
                 <li><a href="<?= Config::INDEX ?>">Home</a></li>
     
-                <li><a href="./lexique.php">Lexique</a></li>
+                <li><a href="<?= Config::LEXIQUE ?>">Lexique</a></li>
     
                 <li><a href="<?= Config::FILM ?>">Films</a></li>
     
@@ -36,10 +36,10 @@
 
         <?php 
 
-            if($_SERVER['REQUEST_URI'] == Config::INDEX || $_SERVER['REQUEST_URI'] == Config::SORT_CHRONOLOGIE || $_SERVER['REQUEST_URI'] == Config::SORT_DATE ) {
+            if($_SERVER['REQUEST_URI'] == Config::INDEX || $_SERVER['REQUEST_URI'] == Config::SORT_CHRONOLOGIE ) {
                 ?>
 
-                    <h2 class="header_description select_none">Bienvenu sur MCUwiki le Site qui recense tous les Films / Series du MCU, vous pourrez y retrouver la liste complete ordonnée <br />
+                    <h2 class="header_description select_none">Bienvenus sur MCUwiki le Site qui recense tous les Films / Series du MCU, vous pourrez y retrouver la liste complete ordonnée <br />
                                                     de tous les Films Marvel, la liste de tous les Personnages et bien plus encore !
                     </h2>
 

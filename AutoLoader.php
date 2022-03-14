@@ -10,9 +10,11 @@
 
         static function autoload($nomClass) {
 
-            if(file_exists($nomClass . ".php")) {
+            $fichier = str_replace('\\', '/', $nomClass . '.php');
 
-                include($nomClass . ".php");
+            if(file_exists($fichier)) {
+
+                include($fichier);
 
             }
 

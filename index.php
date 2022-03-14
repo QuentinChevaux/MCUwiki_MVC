@@ -43,8 +43,8 @@
 
     if(!method_exists($nomcontroleur, $nomaction)) {
 
-        $nomcontroleur = 'controleur\\PageControleur';
-        $nomaction = 'pageNonTrouve';
+        $nomcontroleur = 'controleur\\Erreur404Controleur';
+        $nomaction = 'onload';
 
     }
 

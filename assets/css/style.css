@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
 
+/* 404 font */
+@import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@500&display=swap');
+
 * {
 
     margin: 0;
@@ -18,6 +22,12 @@
 .select_none {
 
     user-select: none;
+
+}
+
+.absolute {
+
+    position: absolute;
 
 }
 
@@ -66,19 +76,19 @@ header {
     
 }
 
-nav {
+.header_nav {
   
     padding-top: 35px;
   
 }
   
-nav li {
+.header_nav li {
   
     list-style: none;
   
 }
 
-nav a {
+.header_nav a {
 
     padding: 10px;
     color: white;
@@ -417,6 +427,26 @@ nav a {
 
 }
 
+                                                                        /* LEXIQUE */
+                                                                 
+
+.lexique_navbar li {
+
+    color: black ;
+    list-style: none;
+    margin: 20px;
+
+    font-family: 'Roboto';
+    font-size: 20px;
+
+}
+
+.lexique_navbar a {
+
+    color: black;
+
+}
+
 
                                                                     /* ADMIN + DASHBOARD PAGE */
 
@@ -513,5 +543,62 @@ textarea {
     text-align: center;
     font-family: 'Roboto';
     font-size: 30px;
+
+}
+
+                                                                /* 404 PAGE */
+
+.error_404_div {
+
+    background-image: url(/mcuwiki_mvc/assets/image/common/gauntlet.jpg);
+    height: 100vh;
+
+    position: relative;
+
+}
+
+.error_404_absolute {
+
+    top: 0;
+    left: 0;
+
+}
+
+.error_404_text {
+
+    padding: 100px 0 0 250px;
+
+    color: white;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+
+}
+
+.error_404_link_back {
+
+    margin: 375px 0 0 1200px;
+
+    color: white;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+
+}
+
+.title_404 {
+
+    font-family: 'Quantico', sans-serif;
+    font-size: 200px;
+
+}
+
+.text_404 {
+
+    font-family: 'Smooch Sans', sans-serif;
+    font-size: 75px;
+    
+}
+
+.text_404 a {
+
+    color: rgb(236, 61, 61);
+    cursor: pointer;
 
 }

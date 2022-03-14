@@ -151,7 +151,7 @@
 
                     <div class="logo_streaming">
 
-                        <a href="<?= $media['streaming_link'] ?>" target='_blank'> <img src="/mcuwiki_mvc/assets/image/common/disney+_logo.jpg" alt="Logo disney+" /></a>
+                        <a href="<?= $media['streaming_link'] ?>" target='_blank'> <img src="/mcuwiki_mvc/assets/image/common/disney_logo.jpg" alt="Logo disney+" /></a>
 
                     </div>
 

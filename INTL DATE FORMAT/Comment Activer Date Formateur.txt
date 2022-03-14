@@ -1,0 +1,3 @@
+Fichier php.ini dans Apashe
+
+activer extension=php_intl.dll en enelevant le ; au début de la ligne

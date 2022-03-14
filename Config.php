@@ -7,9 +7,11 @@
         const AFFICHER = '/mcuwiki_mvc/media/afficher/';
         const FILM = '/mcuwiki_mvc/media/film';
         const SERIE = '/mcuwiki_mvc/media/serie';
+        const LEXIQUE = '/mcuwiki_mvc/lexique';
+        const LEXIQUE_ALL = '/mcuwiki_mvc/lexique/all';
+        const LEXIQUE_RECHERCHE = '/mcuwiki_mvc/lexique/lettre/';
 
         const SORT_CHRONOLOGIE = '/mcuwiki_mvc/media/ordrechronologique';
-        const SORT_DATE = '/mcuwiki_mvc/media/ordredate';
 
         const LOGO_DISNEY = '/mcuwiki_mvc/assets/image/common/disney_logo.jpg';
         const LOGO_NETFLIX = '/mcuwiki_mvc/assets/image/common/netflix_logo.png';
