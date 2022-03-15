@@ -120,6 +120,16 @@
 
         }
 
+        static function deleteLexique($id) {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('DELETE FROM lexique WHERE id = ?');
+
+            $requete -> execute([ $id ]);
+
+        }
+
     }
 
 ?>

@@ -616,6 +616,13 @@ textarea {
 
 }
 
+#delete_lexicon_div {
+
+    display: none;
+
+}
+
+
                                                                 /* 404 PAGE */
 
 .error_404_div {

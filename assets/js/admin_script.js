@@ -115,3 +115,21 @@ function if_radio_movie_oui() {
         }
     
     }
+
+// LEXICON PAGE
+
+    function display_delete_lexicon_form() {
+
+        if (document.getElementById('add_lexicon_div').style.display == 'block') {
+        
+            document.getElementById('add_lexicon_div').style.display = 'none';
+        
+        }
+
+        if (document.getElementById('delete_lexicon_div').style.display == 'none') {
+        
+            document.getElementById('delete_lexicon_div').style.display = 'block';
+        
+        }
+
+    }

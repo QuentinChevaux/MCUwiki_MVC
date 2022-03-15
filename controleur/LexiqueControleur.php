@@ -2,7 +2,7 @@
 
     namespace controleur;
 
-use model\LexiqueModel;
+    use model\LexiqueModel;
 
     class LexiqueControleur extends BaseControleur {
 

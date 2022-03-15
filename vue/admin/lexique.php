@@ -6,6 +6,8 @@
 
 ?>
 
+<div id="add_lexicon_div">
+
     <form action="" method="POST" class="mt-5" id="lexiqueform">
 
         <div class="w-50 mx-auto pt-5">
@@ -64,3 +66,14 @@
         ?>
 
     </div>
+
+</div>
+
+    <button onclick="display_delete_lexicon_form()">Afficher tous les Lexique pour Supprimer</button>
+
+
+<div id="delete_lexicon_div">
+
+    <h2>Supprimer Lexique</h2>
+
+</div>

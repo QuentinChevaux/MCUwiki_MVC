@@ -4,7 +4,8 @@
 
     use Config;
     use model\AdminModel;
-    use PDO_custom;
+use model\LexiqueModel;
+use PDO_custom;
 
     class AdminControleur extends BaseControleur {
 
@@ -341,6 +342,12 @@
 
                 }
 
+                if(isset($_POST['display_all'])) {
+
+                    LexiqueModel::fetchAllLexicon();
+
+                }
+
                 $this -> affichage([], 'lexique');
 
             } else {
@@ -349,7 +356,8 @@
 
             }
 
-
         }
 
     }
+
+?>
