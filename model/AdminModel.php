@@ -110,6 +110,16 @@
 
         }
 
+        static function addLexique($titre, $definition) {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('INSERT INTO lexique (`titre`, `definition`) VALUES (?, ?)');
+
+            $requete -> execute([ $titre, $definition ]);
+
+        }
+
     }
 
 ?>

@@ -30,7 +30,7 @@
 
                     <div class="search_title">
 
-                        <h2>Résultat pour : ' <?= $_POST['search'] ?> '</h2>
+                        <h2>Résultat pour : ' <?= htmlentities($_POST['search']) ?> '</h2>
 
                     </div>
 
@@ -51,13 +51,13 @@
 
                             <div class="card_margin">
 
-                                <a href="<?= Config::AFFICHER . $show['slug'] ?>">
+                                <a href="<?= Config::AFFICHER . htmlentities($show['slug']) ?>">
 
-                                    <div class='movie_card' style="background-image: url(/MCUwiki_MVC/assets/image/media/<?= $show['image'] ?>)">
+                                    <div class='movie_card' style="background-image: url(/MCUwiki_MVC/assets/image/media/<?= htmlentities($show['image']) ?>)">
             
                                         <div class="movie_card_content">
             
-                                            <h2> <?= $show['titre'] ?> </h2>
+                                            <h2> <?= htmlentities($show['titre']) ?> </h2>
 
                                             <div class="savoir_plus">
 
@@ -66,7 +66,7 @@
 
                                             </div>
 
-                                            <p class="card_date capitalize"> <?= $date_fr ?> </p>
+                                            <p class="card_date capitalize"> <?= htmlentities($date_fr) ?> </p>
             
                                         </div>
                                 

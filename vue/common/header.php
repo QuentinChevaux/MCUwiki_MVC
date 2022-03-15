@@ -31,9 +31,13 @@
             </ul>
     
         </nav>
-    
-        <a href="<?= Config::INDEX ?>" class="header_title"> <h1>MCUwiki</h1> </a>
 
+        <div class="title_div">
+
+            <a href="<?= Config::INDEX ?>" class="header_title"> <h1>MCUwiki</h1> </a>
+
+        </div>
+    
         <?php 
 
             if($_SERVER['REQUEST_URI'] == Config::INDEX || $_SERVER['REQUEST_URI'] == Config::SORT_CHRONOLOGIE ) {

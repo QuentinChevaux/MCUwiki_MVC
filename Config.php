@@ -22,6 +22,7 @@
         const DECONNEXION_ADMIN = '/mcuwiki_mvc/admin/deconnexion';
         const DASHBOARD = '/mcuwiki_mvc/admin/dashboard';
         const STREAMING_AVAILIBILITY = '/mcuwiki_mvc/admin/streaming_availibility';
+        const LEXIQUE_ADMIN = '/mcuwiki_mvc/admin/lexique';
 
     }
 

@@ -57,7 +57,16 @@ $alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N
             foreach ($listeLexiqueGroupByFirstLetter as $lettre => $lexiqueDeLettre) {
 
     ?>
-                        <h2> - <?= $lettre ?> - </h2>
+
+                <div class="flex_center select_none">
+
+                    <div class="lettre_lexique">
+
+                        <h2> - <?= htmlentities(ucfirst($lettre)) ?> - </h2>
+
+                    </div>
+
+                </div>
 
     <?php
 
@@ -65,12 +74,12 @@ $alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N
                     
                     ?>
 
-                        <div>
-
-                            <h2><?= $lexique['titre'] ?></h2>
-
-                            <p><?= $lexique['definition'] ?></p>
-
+                        <div class="div_definition select_none">
+    
+                            <h2><?= htmlentities(ucfirst($lexique['titre'])) ?> :</h2>
+    
+                            <p><?= htmlentities($lexique['definition']) ?></p>
+    
                         </div>
 
     <?php
@@ -88,24 +97,48 @@ $alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N
 
     <?php 
 
-        if(isset($lexique_by_letter)) {
+        if(isset($lexique_by_letter) && $lexique_by_letter != null) {
+
+            ?>
+
+                <div class="flex_center lettre_lexique select_none">
+
+                    <h2> - <?= htmlentities(ucfirst(substr($lexique_by_letter[0]['titre'], 0, 1))) ?> - </h2>
+
+                </div>
+
+        <?php
 
             foreach($lexique_by_letter as $lexique) {
 
             ?>
 
-                <h2> - <?= substr($lexique['titre'], 0, 1) ?> - </h2>
+                <div class="div_definition select_none">
 
-            <div>
+                    <h2><?= htmlentities(ucfirst($lexique['titre'])) ?> :</h2>
 
-                <h2><?= $lexique['titre'] ?></h2>
+                    <p><?= htmlentities($lexique['definition']) ?></p>
 
-                <p><?= $lexique['definition'] ?></p>
-
-            </div>
+                </div>
 
     <?php
             }
+
+        } else if(isset($parametre)) {
+
+            ?>
+
+                <div class="lexique_no_definition_father flex_center select_none">
+
+                    <div class="lexique_no_definition">
+    
+                        <h2>Aucune définition disponible pour la Lettre : <span><?= htmlentities($parametre) ?></span></h2>
+    
+                    </div>
+
+                </div>
+
+        <?php
 
         }
         

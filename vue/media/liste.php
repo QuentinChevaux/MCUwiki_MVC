@@ -69,13 +69,13 @@
 
                     <div class="card_margin">
 
-                        <a href="<?= Config::AFFICHER . $media['slug'] ?>">
+                        <a href="<?= Config::AFFICHER . htmlentities($media['slug']) ?>">
 
-                            <div class='movie_card' style="background-image: url(/MCUwiki_MVC/assets/image/media/<?= $media['image'] ?>)">
+                            <div class='movie_card' style="background-image: url(/MCUwiki_MVC/assets/image/media/<?= htmlentities($media['image']) ?>)">
             
                                 <div class="movie_card_content">
             
-                                    <h2> <?= $media['titre'] ?> </h2>
+                                    <h2> <?= htmlentities($media['titre']) ?> </h2>
 
                                     <div class="savoir_plus">
 
@@ -84,7 +84,7 @@
 
                                     </div>
 
-                                    <p class="card_date capitalize"> <?= $date_fr ?> </p>
+                                    <p class="card_date capitalize"> <?= htmlentities($date_fr) ?> </p>
             
                                 </div>
                                 

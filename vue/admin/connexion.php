@@ -14,14 +14,14 @@
         
                 <div class="form-floating mt-4">
                     
-                    <input type="text" name="login" class="form-control"/>
+                    <input type="text" name="login" class="form-control" />
                     <label for="login" class="form-label">Login :</label>
                          
                 </div>
                     
                 <div class="form-floating mt-4">
                     
-                    <input type="password" name="password" class="form-control"/>
+                    <input type="password" name="password" class="form-control" />
                     <label for="password" class="form-label">Password :</label>
                         
                 </div>

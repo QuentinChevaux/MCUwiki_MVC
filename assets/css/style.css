@@ -76,6 +76,13 @@ header {
     
 }
 
+.title_div {
+
+    width: 30%;
+    margin: auto;
+
+}
+
 .header_nav {
   
     padding-top: 35px;
@@ -152,7 +159,7 @@ header {
 
 }
 
-.search_result_none_father, .search_title_father {
+.search_result_none_father, .search_title_father, .lexique_no_definition_father {
 
     padding-top: 30px;
     width: 46%;
@@ -172,7 +179,7 @@ header {
 }
 
 
-.access_denied, .search_result_none {
+.access_denied, .search_result_none, .lexique_no_definition {
 
     background-color: #F7DDDC;
     padding: 20px;
@@ -422,8 +429,11 @@ header {
     border: 2px solid black;
     width: 75%;
     margin: 50px auto auto auto;
-
     border-radius: 10px;
+
+    background-image: url(../image/common/background_movie_section.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 
@@ -432,18 +442,71 @@ header {
 
 .lexique_navbar li {
 
-    color: black ;
     list-style: none;
     margin: 20px;
+    font-size: 30px;
 
-    font-family: 'Roboto';
-    font-size: 20px;
+    font-family: 'Quantico', sans-serif;
+    color: black;
+
+    transition: 300ms ease-out;
+
+}
+
+.lexique_navbar li:hover {
+
+    transform: scale(1.75);
+    transition: 300ms ease-in;
 
 }
 
 .lexique_navbar a {
 
     color: black;
+
+}
+
+.lexique_navbar a:hover {
+
+    color: #D8041A;
+
+}
+
+.lexique_no_definition span {
+
+    font-size: 35px;
+    color: #682826;
+
+}
+
+.lettre_lexique {
+
+    font-size: 30px;
+    font-family: 'Quantico', sans-serif;
+    color: #286B8D;
+
+}
+
+.div_definition {
+
+    width: 75%;
+    margin: 20px auto;
+
+}
+
+.div_definition h2 {
+
+    font-size: 35px;
+    color: #415269;
+    text-decoration: underline;
+    font-family: 'Poppins';
+
+}
+
+.div_definition p {
+
+    color: #928e8e;
+    font-family: 'Poppins';
 
 }
 
@@ -531,7 +594,8 @@ textarea {
 
 }
 
-#movieform input, #serieform input, #movieform textarea, #serieform textarea, .dashboard_form_validate_button, #admin_login input {
+#movieform input, #serieform input, #movieform textarea, #serieform textarea, .dashboard_form_validate_button,
+#admin_login input, #lexiqueform input, #lexiqueform textarea, #lexiqueform button {
 
     border-radius: 10px !important;
 
@@ -543,6 +607,12 @@ textarea {
     text-align: center;
     font-family: 'Roboto';
     font-size: 30px;
+
+}
+
+#lexiqueform h2 {
+
+    font-family: 'Smooch', sans-serif;
 
 }
 

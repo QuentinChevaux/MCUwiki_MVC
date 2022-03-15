@@ -16,9 +16,6 @@
 
     <div class='confirmation_text'>
 
-
-
-
         <?php
 
             if(isset($_SESSION['error_upload'])) {
@@ -94,9 +91,7 @@
 
             <div class="text-end">
                 
-                <button type="button" class="btn-close" onclick="closeMovieForm()">
-                    <span aria-hidden="true"></span>
-                </button>
+                <button type="button" class="btn-close" onclick="closeMovieForm()"></button>
 
             </div>
 
@@ -179,9 +174,7 @@
 
         <div class="text-end">
             
-            <button type="button" class="btn-close" onclick="closeSerieForm()">
-                <span aria-hidden="true"></span>
-            </button>
+            <button type="button" class="btn-close" onclick="closeSerieForm()"></button>
 
         </div>
 
@@ -244,7 +237,7 @@
                 <input type="text" name="tmdb" class="form-control" required />
                 <label for="tmdb" class="form-label">Code TMDB :</label>
             
-            </div>
+        </div>
 
         <div>
 

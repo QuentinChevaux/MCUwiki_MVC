@@ -30,13 +30,27 @@
 
                 <?php
                 
-                    if($_SERVER['REQUEST_URI'] != Config::STREAMING_AVAILIBILITY) {
-                    
+                    if($_SERVER['REQUEST_URI'] != Config::DASHBOARD) {
+                
                         ?>
 
-                            <a href="<?= Config::STREAMING_AVAILIBILITY ?>">Streaming Availibility</a>
-                    
+                            <a href="<?= Config::DASHBOARD ?>">Ajouter Film/Serie</a>
+                
                         <?php 
+
+                    }
+
+                ?>
+
+                <?php 
+
+                    if($_SERVER['REQUEST_URI'] != Config::LEXIQUE_ADMIN) {
+
+                        ?>
+
+                            <a href="<?= Config::LEXIQUE_ADMIN ?>">Lexique</a>
+
+                <?php
 
                     }
 
@@ -44,12 +58,12 @@
 
                 <?php
                 
-                    if($_SERVER['REQUEST_URI'] == Config::STREAMING_AVAILIBILITY) {
-                
+                    if($_SERVER['REQUEST_URI'] != Config::STREAMING_AVAILIBILITY) {
+                    
                         ?>
 
-                            <a href="<?= Config::DASHBOARD ?>">Retour au Dashboard</a>
-                
+                            <a href="<?= Config::STREAMING_AVAILIBILITY ?>">Streaming Availibility</a>
+                    
                         <?php 
 
                     }

@@ -26,7 +26,15 @@ use model\LexiqueModel;
 
             $lexique_by_letter = LexiqueModel::fetchLexiconByLetter($parametre);
 
-            $parametres = compact('lexique_by_letter');
+            if($lexique_by_letter != null) {
+
+                $parametres = compact('lexique_by_letter');
+
+            } else {
+
+                $parametres = compact('parametre');
+
+            }
 
             $this -> affichage($parametres, 'lexique');
 

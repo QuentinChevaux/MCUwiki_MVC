@@ -12,13 +12,13 @@
 
     <div class="div_image">
         
-        <div style="background-image: url(/mcuwiki_mvc/assets/image/media/<?= $media['image'] ?>)"></div>
+        <div style="background-image: url(/mcuwiki_mvc/assets/image/media/<?= htmlentities($media['image']) ?>)"></div>
         
     </div>
 
     <div class="div_texte">
 
-        <h2> <?= $media['titre'] ?> </h2>
+        <h2> <?= htmlentities($media['titre']) ?> </h2>
 
             <?php
 
@@ -39,7 +39,7 @@
                 if($media['duree']) {
             ?>
 
-                    <p class="movie_page_card_duration_text"> Durée du Film : <span><?= $duration_converted ?></span> </p>
+                    <p class="movie_page_card_duration_text"> Durée du Film : <span><?= htmlentities($duration_converted) ?></span> </p>
 
             <?php
 
@@ -47,7 +47,7 @@
 
                     ?>
         
-                    <p class="movie_page_card_duration_text">Nombre D'Épisodes : <span> <?= $media['nbepisode'] ?></span> </p>
+                    <p class="movie_page_card_duration_text">Nombre D'Épisodes : <span> <?= htmlentities($media['nbepisode']) ?></span> </p>
                 
                 <?php
 
@@ -62,9 +62,9 @@
 
             ?>
 
-        <p class="movie_page_card_release_text capitalize"> Date de Sortie : <span><?= $date_fr ?></span> </p>
+        <p class="movie_page_card_release_text capitalize"> Date de Sortie : <span><?= htmlentities($date_fr) ?></span> </p>
 
-        <p class="movie_page_card_description_text"> <span><?= $media['description'] ?></span> </p>
+        <p class="movie_page_card_description_text"> <span><?= htmlentities($media['description']) ?></span> </p>
 
         <?php 
 
@@ -82,7 +82,7 @@
 
                         <div class="logo_streaming">
 
-                            <a href="<?= $media['streaming_link'] ?>" target='_blank'> <img src="<?= Config::LOGO_DISNEY ?>" alt="Logo disney+" /></a>
+                            <a href="<?= htmlentities($media['streaming_link']) ?>" target='_blank'> <img src="<?= Config::LOGO_DISNEY ?>" alt="Logo disney+" /></a>
 
                         </div>
 
@@ -105,7 +105,7 @@
 
                         <div class="logo_streaming">
 
-                            <a href="<?= $media['streaming_link'] ?>" target='_blank'> <img src="<?= Config::LOGO_NETFLIX ?>" alt="Logo Netflix" class="logo_netflix"/></a>
+                            <a href="<?= htmlentities($media['streaming_link']) ?>" target='_blank'> <img src="<?= Config::LOGO_NETFLIX ?>" alt="Logo Netflix" class="logo_netflix"/></a>
 
                         </div>
 
@@ -128,7 +128,7 @@
 
                         <div class="logo_streaming">
 
-                            <a href="<?= $media['streaming_link'] ?>" target='_blank'> <img src="<?= Config::LOGO_PRIME ?>" alt="Logo Prime" class="logo_prime"/></a>
+                            <a href="<?= htmlentities($media['streaming_link']) ?>" target='_blank'> <img src="<?= Config::LOGO_PRIME ?>" alt="Logo Prime" class="logo_prime"/></a>
 
                         </div>
 
@@ -151,7 +151,7 @@
 
                     <div class="logo_streaming">
 
-                        <a href="<?= $media['streaming_link'] ?>" target='_blank'> <img src="/mcuwiki_mvc/assets/image/common/disney_logo.jpg" alt="Logo disney+" /></a>
+                        <a href="<?= htmlentities($media['streaming_link']) ?>" target='_blank'> <img src="/mcuwiki_mvc/assets/image/common/disney_logo.jpg" alt="Logo disney+" /></a>
 
                     </div>
 
