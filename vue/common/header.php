@@ -27,6 +27,8 @@
                 <li><a href="<?= Config::FILM ?>">Films</a></li>
     
                 <li><a href="<?= Config::SERIE ?>">Series</a></li>
+
+                <li><a href="<?= Config::PERSONNAGE ?>">Personnages</a></li>
     
             </ul>
     
@@ -43,7 +45,7 @@
             if($_SERVER['REQUEST_URI'] == Config::INDEX || $_SERVER['REQUEST_URI'] == Config::SORT_CHRONOLOGIE ) {
                 ?>
 
-                    <h2 class="header_description select_none">Bienvenus sur MCUwiki le Site qui recense tous les Films / Series du MCU, vous pourrez y retrouver la liste complete ordonnée <br />
+                    <h2 class="header_description select_none">Bienvenue sur MCUwiki le Site qui recense tous les Films / Series du MCU, vous pourrez y retrouver la liste complete ordonnée <br />
                                                     de tous les Films Marvel, la liste de tous les Personnages et bien plus encore !
                     </h2>
 

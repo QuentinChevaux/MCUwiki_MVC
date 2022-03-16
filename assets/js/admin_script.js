@@ -47,18 +47,25 @@ function closeSerieForm() {
 // Display or Hide Suite Chornologique input
 
     // Movie Form
+if(document.getElementById('btn_radio_movie_non') != undefined){
 
-document.getElementById('btn_radio_movie_non').addEventListener('click', () => {
+    document.getElementById('btn_radio_movie_non').addEventListener('click', () => {
 
-    if_radio_movie_non();
+        if_radio_movie_non();
 
-});
+    });
 
-document.getElementById('btn_radio_movie_oui').addEventListener('click', () => {
+}
+
+if(document.getElementById('btn_radio_movie_oui') != undefined) {
+
+    document.getElementById('btn_radio_movie_oui').addEventListener('click', () => {
 
     if_radio_movie_oui();
 
-});
+    });
+
+}
 
 
 function if_radio_movie_non() {
@@ -83,18 +90,26 @@ function if_radio_movie_oui() {
 
     // Serie Form
 
+if(document.getElementById('btn_radio_serie_non') != undefined) {
+
     document.getElementById('btn_radio_serie_non').addEventListener('click', () => {
+
 
         if_radio_serie_non();
     
     });
-    
+
+}
+
+if(document.getElementById('btn_radio_serie_oui') != undefined) {
+
     document.getElementById('btn_radio_serie_oui').addEventListener('click', () => {
     
         if_radio_serie_oui();
     
     });
-    
+
+}
     
     function if_radio_serie_non() {
     
@@ -116,20 +131,3 @@ function if_radio_movie_oui() {
     
     }
 
-// LEXICON PAGE
-
-    function display_delete_lexicon_form() {
-
-        if (document.getElementById('add_lexicon_div').style.display == 'block') {
-        
-            document.getElementById('add_lexicon_div').style.display = 'none';
-        
-        }
-
-        if (document.getElementById('delete_lexicon_div').style.display == 'none') {
-        
-            document.getElementById('delete_lexicon_div').style.display = 'block';
-        
-        }
-
-    }

@@ -30,6 +30,28 @@ use PDO_custom;
 
         }
 
+        static function fetchLexiconLike($letter) {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('SELECT * FROM lexique WHERE titre LIKE :lettre ORDER BY titre ASC');
+
+            $requete -> execute([ ':lettre' => '%' . $letter . '%' ]);
+
+            return $requete -> fetchAll();
+
+        }
+
+        static function deleteById($id) {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('DELETE FROM lexique WHERE id = ?');
+
+            $requete -> execute([ $id ]);
+
+        }
+
     }
 
 ?>

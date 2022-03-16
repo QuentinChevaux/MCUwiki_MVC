@@ -5,9 +5,12 @@
         // INDEX
         const INDEX = '/mcuwiki_mvc/';
         const AFFICHER = '/mcuwiki_mvc/media/afficher/';
+        const LEXIQUE= '/mcuwiki_mvc/lexique';
         const FILM = '/mcuwiki_mvc/media/film';
         const SERIE = '/mcuwiki_mvc/media/serie';
-        const LEXIQUE = '/mcuwiki_mvc/lexique';
+        const PERSONNAGE = '/mcuwiki_mvc/personnage';
+
+        // LEXIQUE
         const LEXIQUE_ALL = '/mcuwiki_mvc/lexique/all';
         const LEXIQUE_RECHERCHE = '/mcuwiki_mvc/lexique/lettre/';
 
@@ -22,7 +25,9 @@
         const DECONNEXION_ADMIN = '/mcuwiki_mvc/admin/deconnexion';
         const DASHBOARD = '/mcuwiki_mvc/admin/dashboard';
         const STREAMING_AVAILIBILITY = '/mcuwiki_mvc/admin/streaming_availibility';
-        const LEXIQUE_ADMIN = '/mcuwiki_mvc/admin/lexique';
+        const LEXIQUE_ADMIN_AJOUTER = '/mcuwiki_mvc/admin/lexiqueajouter';
+        const LEXIQUE_ADMIN_SUPPRIMER = '/mcuwiki_mvc/admin/lexiquesupprimer/';
+        const PERSONNAGE_ADMIN = '/mcuwiki_mvc/admin/personnage';
 
     }
 

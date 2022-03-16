@@ -16,19 +16,28 @@
 
     <div class='confirmation_text'>
 
-        <?php
+            <?php
 
-            if(isset($_SESSION['error_upload'])) {
+                if(isset($_SESSION['error_upload'])) {
 
             ?>
 
-                <h2 style='display: block' class="errormessage"><?= $_SESSION['error_upload'] ?></h2>
+                <div class="search_title_father mt-3 select_none">
+
+                    <div class="search_title">
+
+                        <h2 class="errormessage"> <?= $_SESSION['error_upload'] ?> </h2>
+
+                    </div>
+
+                </div>
 
                 <script>
-            
+                                        
                     setTimeout(function(){
-                        document.querySelector('.errormessage').style.display = 'none';
-                    }, 2000);
+                        $('.search_title').slideToggle();
+                        $('.search_title_father').slideToggle();
+                    }, 5000); 
 
                 </script>
 
@@ -42,44 +51,61 @@
 
             ?>
 
-                <h2 style='display: block' class="confirmmessage"><?= $_SESSION['movie_success'] ?></h2>
+            <div class="search_title_father mt-3 select_none">
 
-                <script>
-                    
-                    setTimeout(function(){
-                        document.querySelector('.confirmmessage').style.display = 'none';
-                    }, 2000);
+                <div class="search_title">
 
-                </script>
+                    <h2 class="errormessage"> <?= $_SESSION['movie_success'] ?> </h2>
 
-        <?php
+                </div>
 
-                unset($_SESSION['movie_success']);
+            </div>
+
+            <script>
+                                    
+                setTimeout(function(){
+                    $('.search_title').slideToggle();
+                    $('.search_title_father').slideToggle();
+                }, 5000); 
+
+            </script>
+
+            <?php
+
+            unset($_SESSION['movie_success']);
 
             }
 
-         
             if(isset($_SESSION['serie_success'])) {
 
             ?>
 
-                <h2 style='display: block' class="confirmmessage"><?= $_SESSION['serie_success'] ?></h2>
+            <div class="search_title_father mt-3 select_none">
 
-                <script>
+                <div class="search_title">
 
-                    setTimeout(function(){
-                        document.querySelector('.confirmmessage').style.display = 'none';
-                    }, 2000);
+                    <h2 class="errormessage"> <?= $_SESSION['serie_success'] ?> </h2>
 
-                </script>
+                </div>
 
-        <?php
+            </div>
 
-                unset($_SESSION['serie_success']);
+            <script>
+                                    
+                setTimeout(function(){
+                    $('.search_title').slideToggle();
+                    $('.search_title_father').slideToggle();
+                }, 5000); 
+
+            </script>
+
+            <?php
+
+            unset($_SESSION['serie_success']);
 
             }
 
-        ?>
+            ?>
 
     </div>
 

@@ -1,12 +1,10 @@
 <?php
 
-    $title = 'Admin Lexique';
+    $title = 'Admin Lexique Ajouter';
 
     include './vue/common/header_admin.php';
 
 ?>
-
-<div id="add_lexicon_div">
 
     <form action="" method="POST" class="mt-5" id="lexiqueform">
 
@@ -41,39 +39,43 @@
     
     <div class="confirmation_text">
         
-        <?php
+    <?php
 
-            if(isset($_SESSION['lexique_success'])) {
+        if(isset($_SESSION['lexicon_success'])) {
 
-        ?>
+    ?>
 
-            <h2 style='display: block' class="lexique_success mt-5"><?= $_SESSION['lexique_success'] ?></h2>
+            <div class="search_title_father mt-3 select_none">
+
+                <div class="search_title">
+
+                    <h2 class="confirmmessage"> <?= $_SESSION['lexicon_success'] ?> </h2>
+
+                </div>
+
+            </div>
 
             <script>
-
+                                    
                 setTimeout(function(){
-                    document.querySelector('.lexique_success').style.display = 'none';
-                }, 2000);
+                    $('.search_title').slideToggle();
+                    $('.search_title_father').slideToggle();
+                }, 5000); 
 
-            </script>   
+            </script>
 
-        <?php
+    <?php
 
-                unset($_SESSION['lexique_success']);
+            unset($_SESSION['lexicon_success']);
 
-            }
+        }
 
-        ?>
+    ?> 
 
     </div>
 
-</div>
-
-    <button onclick="display_delete_lexicon_form()">Afficher tous les Lexique pour Supprimer</button>
-
-
-<div id="delete_lexicon_div">
-
-    <h2>Supprimer Lexique</h2>
+<div class="mt-5 w-50 mx-auto text-center" id="lexique_button">
+    
+    <button type='button' class='btn btn-dark' onclick="window.location.href='<?= Config::LEXIQUE_ADMIN_SUPPRIMER ?>'">Afficher Page Supprimer Lexique</button>
 
 </div>

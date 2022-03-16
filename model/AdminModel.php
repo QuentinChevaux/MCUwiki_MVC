@@ -130,6 +130,26 @@
 
         }
 
+        static function addPersonnage($nom, $acteur, $biographie, $image) {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('INSERT INTO personnage (nom, acteur, biographie, `image`) VALUES (?, ?, ?, ?)');
+
+            $requete -> execute([ $nom, $acteur, $biographie, $image ]);
+
+        }
+        
+        static function linkPersonnageWithOeuvre($id_oeuvre, $id_personnage) {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('INSERT INTO personnage_oeuvre (id_oeuvre, id_personnage) VALUES (?, ?)');
+
+            $requete -> execute([ $id_oeuvre, $id_personnage ]);
+
+        }
+
     }
 
 ?>

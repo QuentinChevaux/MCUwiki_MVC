@@ -8,6 +8,12 @@ $alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N
 
 ?>
 
+<div class="lexique_title">
+
+    <h2>Cherchez içi une Définition ou terme provenant de L'Univers Marvel</h2>
+
+</div>
+
 <nav class="lexique_navbar">
 
     <ul class="flex_center">
@@ -83,7 +89,6 @@ $alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N
                         </div>
 
     <?php
-
 
                 }
 

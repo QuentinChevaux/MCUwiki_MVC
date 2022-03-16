@@ -510,6 +510,15 @@ header {
 
 }
 
+.lexique_title {
+
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: 'Quantico', sans-serif;
+    color: #286B8D;
+    text-align: center;
+
+}
 
                                                                     /* ADMIN + DASHBOARD PAGE */
 
@@ -595,7 +604,8 @@ textarea {
 }
 
 #movieform input, #serieform input, #movieform textarea, #serieform textarea, .dashboard_form_validate_button,
-#admin_login input, #lexiqueform input, #lexiqueform textarea, #lexiqueform button {
+#admin_login input, #lexiqueform input, #lexiqueform textarea, #lexiqueform button, #lexique_button button,
+#deletelexiconform input, #fetchalllexicon input, #personnageform input, #personnageform textarea {
 
     border-radius: 10px !important;
 
@@ -610,7 +620,7 @@ textarea {
 
 }
 
-#lexiqueform h2 {
+#lexiqueform h2, #deletelexiconform h2 {
 
     font-family: 'Smooch', sans-serif;
 
@@ -620,6 +630,17 @@ textarea {
 
     display: none;
 
+}
+
+/* Personnage */
+
+.media_display_div {
+
+    height: 300px;
+    overflow: auto;
+
+    font-family: 'Quantico', sans-serif;
+    font-size: 20px;
 }
 
 
