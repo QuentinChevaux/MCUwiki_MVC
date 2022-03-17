@@ -423,7 +423,9 @@ use PDO_custom;
                     $file_extension = pathinfo($filename, PATHINFO_EXTENSION);
                     $file_extension = strtolower($file_extension);
 
-                    $filename = strtolower(str_replace(' ', '', $_POST['nom'])) . '.' . $file_extension;
+                    $search = [' ', '\''];
+
+                    $filename = strtolower(str_replace($search, '', $_POST['nom'])) . '.' . $file_extension;
 
                     $target_file = './assets/image/personnage/' . $filename;
 

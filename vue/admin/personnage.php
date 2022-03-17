@@ -39,8 +39,6 @@
 
 ?> 
 
-    <a href="http://www.marvel-cineverse.fr/pages/mcu/encyclopedie/personnages/">Database pour remplir ma bdd</a>
-
     <form action="" method="POST" enctype='multipart/form-data' id="personnageform" class="mt-5">
 
         <div class="w-50 mx-auto">

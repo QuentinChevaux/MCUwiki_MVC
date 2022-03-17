@@ -520,6 +520,48 @@ header {
 
 }
 
+                                                                    /* PAGE PERSONNAGE */
+
+.personnage_thumbnail_margin {
+
+    margin: 20px;
+
+}                                                            
+
+.personnage_thumbnail {
+
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+
+    text-align: center;
+
+}
+
+.personnage_thumbnail h2 {
+
+    font-family: 'Quantico';
+
+}
+
+.personnage_biographie_div {
+
+    font-family: 'Poppins';
+    margin: 10px auto;
+
+    height: 75px;
+    width: 100%;
+
+    background-color: aqua;
+
+}
+
+.personnage_thumbnail img {
+
+    border-radius: 10px;
+
+}
+
                                                                     /* ADMIN + DASHBOARD PAGE */
 
 /* ADMIN LOGIN INTERFACE */

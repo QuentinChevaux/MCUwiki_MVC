@@ -20,7 +20,7 @@
     
             <ul class="flex_center select_none">
     
-                <li><a href="<?= Config::INDEX ?>">Home</a></li>
+                <li><a href="<?= Config::INDEX ?>">Index</a></li>
     
                 <li><a href="<?= Config::LEXIQUE ?>">Lexique</a></li>
     

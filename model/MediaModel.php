@@ -30,7 +30,21 @@
 
         }
 
-        static function fetchMediaById($slug) {
+        static function fetchAllMedia() {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('SELECT * FROM oeuvre
+                                              LEFT JOIN film ON oeuvre.id = film.id
+                                              LEFT JOIN serie ON oeuvre.id = serie.id');
+
+            $requete -> execute();
+            
+            return $requete -> fetchAll();
+
+        }
+
+        static function fetchMediaBySlug($slug) {
 
             $connexion = PDO_custom::getInstance();
 

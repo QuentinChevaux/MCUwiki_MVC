@@ -130,4 +130,3 @@ if(document.getElementById('btn_radio_serie_oui') != undefined) {
         }
     
     }
-

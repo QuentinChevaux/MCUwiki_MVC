@@ -40,7 +40,7 @@
 
         public function afficher($slug) {
 
-            $media = MediaModel::fetchMediaById($slug);
+            $media = MediaModel::fetchMediaBySlug($slug);
 
             if($media) {
 
