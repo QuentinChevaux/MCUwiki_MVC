@@ -75,7 +75,7 @@ use PDO_custom;
 
             if(isset($_SESSION['admin'])) {
 
-                if(isset($_POST['valider_movie'])) {
+                if(isset($_POST['valider_movie']) && $_SESSION['token'] == $_POST['token']) {
 
                     $filename = $_FILES['image']['name'];
                                 
@@ -114,7 +114,7 @@ use PDO_custom;
 
                 }
 
-                if(isset($_POST['valider_serie'])) {
+                if(isset($_POST['valider_serie']) && $_SESSION['token'] == $_POST['token']) {
 
                     $filename = $_FILES['image']['name'];
                             
@@ -153,7 +153,13 @@ use PDO_custom;
 
                 }
 
-                $this -> affichage([], 'dashboard');
+                $token = uniqid(rand(), true);
+
+                $_SESSION['token'] = $token;
+                
+                $parametres = compact('token');
+
+                $this -> affichage($parametres, 'dashboard');
 
             } else {
 
@@ -169,7 +175,7 @@ use PDO_custom;
 
                 $message = '';
 
-                if(isset($_POST['update_media'])) {
+                if(isset($_POST['update_media']) && $_SESSION['token'] == $_POST['token']) {
                     
                     $medias = AdminModel::fetchAllMedia();
 
@@ -318,7 +324,11 @@ use PDO_custom;
                 
                 }
 
-                $parametres = compact('message');
+                $token = uniqid(rand(), true);
+
+                $_SESSION['token'] = $token;
+
+                $parametres = compact('message', 'token');
 
                 $this -> affichage($parametres, 'streaming_availibility');
 
@@ -334,7 +344,7 @@ use PDO_custom;
 
             if(isset($_SESSION['admin'])) {
 
-                if(isset($_POST['valider'])) {
+                if(isset($_POST['valider']) && $_SESSION['token'] == $_POST['token']) {
 
                     AdminModel::addLexique($_POST['titre'], $_POST['definition']);
 
@@ -342,13 +352,19 @@ use PDO_custom;
 
                 }
 
-                if(isset($_POST['display_all'])) {
+                if(isset($_POST['display_all']) && $_SESSION['token'] == $_POST['token']) {
 
                     LexiqueModel::fetchAllLexicon();
 
                 }
 
-                $this -> affichage([], 'lexiqueajouter');
+                $token = uniqid(rand(), true);
+
+                $_SESSION['token'] = $token;
+
+                $parametres = compact('token');
+
+                $this -> affichage($parametres, 'lexiqueajouter' , 'token');
 
             } else {
 
@@ -364,37 +380,55 @@ use PDO_custom;
                 
                 $parametres = [];
 
-                if(isset($_POST['fetch_all_lexicon'])) {
+                if(isset($_POST['fetch_all_lexicon']) && $_SESSION['token'] == $_POST['token']) {
 
                     $lexique_all = LexiqueModel::fetchAllLexicon();
 
-                    $parametres = compact('lexique_all');
+                    $token = uniqid(rand(), true);
+
+                    $_SESSION['token'] = $token;
+
+                    $parametres = compact('lexique_all', 'token');
      
                 }
 
-                if(isset($_POST['search_lexique_submit'])) {
+                if(isset($_POST['search_lexique_submit']) && $_SESSION['token'] == $_POST['token']) {
 
                     $lexique_like = LexiqueModel::fetchLexiconLike($_POST['search_input']);
 
-                    $parametres = compact('lexique_like');
+                    $token = uniqid(rand(), true);
+
+                    $_SESSION['token'] = $token;
+
+                    $parametres = compact('lexique_like', 'token');
 
                 }
                 
-                if(isset($_POST['delete_like'])) {
+                if(isset($_POST['delete_like']) && $_SESSION['token'] == $_POST['token']) {
 
                     LexiqueModel::deleteById($parametre);
+
+                    $token = uniqid(rand(), true);
+
+                    $_SESSION['token'] = $token;
+                    
+                    $parametres = compact('token');
 
                     $_SESSION['lexicon_success'] = 'La Définition à bien été Supprimée !';
 
                 }
 
-                if(isset($_POST['delete_all'])) {
+                if(isset($_POST['delete_all']) && $_SESSION['token'] == $_POST['token']) {
 
                     LexiqueModel::deleteById($parametre);
 
                     $lexique_all = LexiqueModel::fetchAllLexicon();
 
-                    $parametres = compact('lexique_all');
+                    $token = uniqid(rand(), true);
+
+                    $_SESSION['token'] = $token;
+
+                    $parametres = compact('lexique_all', 'token');
 
                     $_SESSION['lexicon_success'] = 'La Définition à bien été Supprimée !';
 
@@ -416,7 +450,7 @@ use PDO_custom;
 
                 $filename = '';
 
-                if(isset($_POST['valider'])) {
+                if(isset($_POST['valider']) && $_SESSION['token'] == $_POST['token']) {
 
                     $filename = $_FILES['image']['name'];   
                     
@@ -456,7 +490,11 @@ use PDO_custom;
 
                 $liste_oeuvre = AdminModel::fetchAllMedia();
 
-                $parametres = compact('liste_oeuvre');
+                $token = uniqid(rand(), true);
+
+                $_SESSION['token'] = $token;
+
+                $parametres = compact('liste_oeuvre', 'token');
 
                 $this -> affichage($parametres, 'personnage');
 

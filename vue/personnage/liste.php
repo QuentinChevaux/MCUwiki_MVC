@@ -12,18 +12,19 @@
 
         <?php
 
-    /*
-        foreach($oeuvre as $media) {
+            foreach($listePersonnageParOeuvre as $personnageParOeuvre) {
 
-            ?>
+                ?>
 
-                <h2><?= $media['titre'] ?></h2>
+                    <div>
 
-        <?php
+                        <h2><?= $personnageParOeuvre[0]['titre'] ?></h2>
 
-    */
+                    </div>
 
-            foreach($liste as $personnage) {
+                <?php
+
+                foreach($personnageParOeuvre as $personnage) {
 
                 ?>
 
@@ -42,10 +43,10 @@
 
         <?php
 
+                }
+
             }
-        
-        // }
-    
+     
         ?>
 
     </div>

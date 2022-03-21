@@ -41,6 +41,8 @@
 
     <form action="" method="POST" enctype='multipart/form-data' id="personnageform" class="mt-5">
 
+        <input type="hidden" name="token" value="<?= $token ?>">
+
         <div class="w-50 mx-auto">
 
             <div class="form-floating mt-4">

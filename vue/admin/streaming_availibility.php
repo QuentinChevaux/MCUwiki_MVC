@@ -8,6 +8,8 @@
 
     <form action="" method="POST" class="text-center mt-5">
 
+        <input type="hidden" name="token" value="<?= $token ?>">
+
         <input type="submit" name="update_media" value="Update Media Database" class="btn btn-dark w-25 fs-2 pt-4 pb-4 rounded" />
 
     </form>

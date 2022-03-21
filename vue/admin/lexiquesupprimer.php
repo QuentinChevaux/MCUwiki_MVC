@@ -41,6 +41,8 @@
 
     <form action=""method='POST' class="mt-2" id="deletelexiconform">
 
+        <input type="hidden" name="token" value="<?= $token ?>">
+
         <div class="w-50 mx-auto pt-5">
 
             <h2 class='text-center'>Supprimer une Définition du Lexique</h2>
@@ -69,6 +71,8 @@
                 <div class="w-75 mx-auto mt-5">
 
                     <form action="<?= Config::LEXIQUE_ADMIN_SUPPRIMER . $lexique['id'] ?>" method="POST" class="d-flex justify-content-between">
+
+                        <input type="hidden" name="token" value="<?= $token ?>">
 
                         <div>
 
@@ -105,6 +109,8 @@
 
     <form action="" method="POST" class="mt-3" id="fetchalllexicon">
 
+        <input type="hidden" name="token" value="<?= $token ?>">
+
         <div class="w-50 mx-auto">
 
             <input type="submit" name="fetch_all_lexicon" value="Afficher Tous le Lexique" class="btn btn-dark mt-3">
@@ -124,6 +130,8 @@
                 <div class="w-75 mx-auto mt-5">
 
                     <form action="<?= Config::LEXIQUE_ADMIN_SUPPRIMER . $lexique['id'] ?>" class="d-flex justify-content-between" method="POST">
+
+                        <input type="hidden" name="token" value="<?= $token ?>">
 
                         <div>
 

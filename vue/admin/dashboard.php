@@ -113,6 +113,8 @@
 
     <form action="" method="POST" enctype='multipart/form-data' id="movieform" class="mt-3">
 
+        <input type="hidden" name='token' value="<?= $token ?>">
+
         <div class="w-50 mx-auto">
 
             <div class="text-end">
@@ -196,82 +198,84 @@
 
     <form action="" method="POST" enctype='multipart/form-data' id="serieform" class="mt-3">
 
-    <div class="w-50 mx-auto">
+        <input type="hidden" name='token' value="<?= $token ?>">
 
-        <div class="text-end">
-            
-            <button type="button" class="btn-close" onclick="closeSerieForm()"></button>
+        <div class="w-50 mx-auto">
 
-        </div>
-
-        <div class="form-floating mt-4">
-
-            <input type="text" name="titre" class="form-control" required />
-            <label for="titre" class="form-label">Titre :</label>
-
-        </div>
-
-        <div class="form-group">
-            
-            <label for="description" class="form-label mt-4">Description : </label>
-            <textarea name="description" rows="6" class="form-control" required></textarea>
-
-        </div>
-
-        <div class="form-floating mt-4">
-        
-                <input type="number" name="nbepisode" class="form-control" required/>
-                <label for="nbepisode" class="form-label">Nombre d'Épisodes :</label>
-            
-        </div>
-
-        <div class="form-floating mt-4">
-
-            <input type="date" name="date" class="form-control" required/>
-            <label for="date" class="form-label">Date de Sortie :</label>
-
-        </div>
-
-        <p class="mt-4">A la suite dans la Chronologie ?</p>
-
-            <div class="btn-group radio_button w-100" role="group" aria-label="Basic radio toggle button group">
-
-                <input type="radio" class="btn-check" name="btnradio" id="btn_radio_serie_oui" value='oui' autocomplete="off" checked required>
-                <label class="btn btn-outline-primary btn_radio_left" for="btn_radio_serie_oui">Oui</label>
-
-                <input type="radio" class="btn-check" name="btnradio" id="btn_radio_serie_non" value='non' autocomplete="off" required>
-                <label class="btn btn-outline-primary btn_radio_right" for="btn_radio_serie_non">Non</label>
+            <div class="text-end">
+                
+                <button type="button" class="btn-close" onclick="closeSerieForm()"></button>
 
             </div>
 
-            <div class="form-floating mt-4" id="serie_date_fictive">
-        
-                <input type="date" name="date_fictive" class="form-control" />
-                <label for="ordre" class="form-label">Date Fictive de la Serie :</label>
-            
+            <div class="form-floating mt-4">
+
+                <input type="text" name="titre" class="form-control" required />
+                <label for="titre" class="form-label">Titre :</label>
+
             </div>
 
-        <div class="form-group">
+            <div class="form-group">
+                
+                <label for="description" class="form-label mt-4">Description : </label>
+                <textarea name="description" rows="6" class="form-control" required></textarea>
 
-            <label for="file" class="form-label mt-4">Image :</label>
-            <input class="form-control" type="file" name="image" required/>
+            </div>
 
-        </div>
-
-        <div class="form-floating mt-4">
-        
-                <input type="text" name="tmdb" class="form-control" required />
-                <label for="tmdb" class="form-label">Code TMDB :</label>
+            <div class="form-floating mt-4">
             
-        </div>
+                    <input type="number" name="nbepisode" class="form-control" required/>
+                    <label for="nbepisode" class="form-label">Nombre d'Épisodes :</label>
+                
+            </div>
 
-        <div>
+            <div class="form-floating mt-4">
 
-            <button type="submit" name="valider_serie" class="btn btn-dark w-100 mt-4 dashboard_form_validate_button">Valider</button>
+                <input type="date" name="date" class="form-control" required/>
+                <label for="date" class="form-label">Date de Sortie :</label>
 
-        </div>
+            </div>
 
-        </div>
+            <p class="mt-4">A la suite dans la Chronologie ?</p>
+
+                <div class="btn-group radio_button w-100" role="group" aria-label="Basic radio toggle button group">
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btn_radio_serie_oui" value='oui' autocomplete="off" checked required>
+                    <label class="btn btn-outline-primary btn_radio_left" for="btn_radio_serie_oui">Oui</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btn_radio_serie_non" value='non' autocomplete="off" required>
+                    <label class="btn btn-outline-primary btn_radio_right" for="btn_radio_serie_non">Non</label>
+
+                </div>
+
+                <div class="form-floating mt-4" id="serie_date_fictive">
+            
+                    <input type="date" name="date_fictive" class="form-control" />
+                    <label for="ordre" class="form-label">Date Fictive de la Serie :</label>
+                
+                </div>
+
+            <div class="form-group">
+
+                <label for="file" class="form-label mt-4">Image :</label>
+                <input class="form-control" type="file" name="image" required/>
+
+            </div>
+
+            <div class="form-floating mt-4">
+            
+                    <input type="text" name="tmdb" class="form-control" required />
+                    <label for="tmdb" class="form-label">Code TMDB :</label>
+                
+            </div>
+
+            <div>
+
+                <button type="submit" name="valider_serie" class="btn btn-dark w-100 mt-4 dashboard_form_validate_button">Valider</button>
+
+            </div>
+
+            </div>
 
     </form>
 

@@ -8,6 +8,8 @@
 
     <form action="" method="POST" class="mt-5" id="lexiqueform">
 
+        <input type="hidden" name="token" value="<?= $token ?>">
+
         <div class="w-50 mx-auto pt-5">
 
             <h2 class="text-center">Ajouter une Nouvelle Définition au Lexique</h2>

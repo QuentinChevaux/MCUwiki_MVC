@@ -4,14 +4,6 @@
 
     ob_start();
 
-    if(!isset($_SESSION['token'])) {
-
-        $_SESSION['token'] = bin2hex(random_bytes(32));
-
-    }
-
-    $token = $_SESSION['token'];
-
     include 'AutoLoader.php';
     AutoLoader::start();
 
