@@ -21,6 +21,18 @@
 
         }
 
+        static function fetchPersonnageById($id) {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('SELECT * FROM personnage WHERE id = ?');
+
+            $requete -> execute([ $id ]);
+
+            return $requete -> fetch();
+
+        }
+
     }
 
 ?>

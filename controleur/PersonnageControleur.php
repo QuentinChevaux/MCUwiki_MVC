@@ -32,6 +32,16 @@
 
         }
 
+        public function afficher($parametre) {
+
+            $personnage = PersonnageModel::fetchPersonnageById($parametre);
+
+            $parametres = compact('personnage');
+
+            $this -> affichage($parametres, 'afficher');
+
+        }
+
     }
 
 ?>

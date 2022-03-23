@@ -107,3 +107,9 @@
     </div>
 
 </section>
+
+<?php
+
+    include './vue/common/footer.php';
+
+?>

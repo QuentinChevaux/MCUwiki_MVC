@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
-
-/* 404 font */
 @import url('https://fonts.googleapis.com/css2?family=Quantico:ital,wght@1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@500&display=swap');
 
@@ -70,7 +68,7 @@ a {
 
 }
 
-header {
+header, footer {
 
     background-color: #D8041A;
     
@@ -399,7 +397,51 @@ header {
 
 }
 
-                                                                    /* FILM PAGE */
+.liste_personnage_titre {
+
+    text-align: center;
+    font-family: 'Quantico', sans-serif;
+    font-size: 35px;
+
+    margin-bottom: 30px;
+
+}
+
+.card_personnage {
+
+    text-align: center;
+    margin: 0 25px 25px 25px;
+
+}
+
+.card_personnage_link {
+
+    color: black;
+    transition: 300ms ease-out;
+
+}
+
+.card_personnage_link:hover {
+
+    transform: scale(1.1);
+    transition: 300ms ease-in;
+
+}
+
+.card_personnage h2 {
+
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 5px;
+
+}
+
+.card_personnage img {
+
+    border-radius: 10px;
+
+}
+
+                                                                    /* PAGE RECHERCHE FILM SERIE*/
 
 .search_div {
 
@@ -524,9 +566,18 @@ header {
 
 .personnage_thumbnail_margin {
 
-    margin: 20px;
+    margin: 15px;
 
-}                                                            
+}
+
+.page_perso_titre_media {
+
+    font-family: 'Quantico', sans-serif;
+    padding: 20px 20px 0 20px;
+    font-size: 70px;
+    color: #286B8D;
+
+}
 
 .personnage_thumbnail {
 
@@ -538,27 +589,15 @@ header {
 
 }
 
-.personnage_thumbnail h2 {
-
-    font-family: 'Quantico';
-
-}
-
-.personnage_biographie_div {
-
-    font-family: 'Poppins';
-    margin: 10px auto;
-
-    height: 75px;
-    width: 100%;
-
-    background-color: aqua;
-
-}
-
 .personnage_thumbnail img {
 
     border-radius: 10px;
+
+}
+
+.movie_div_page_personnage {
+
+    margin: 20px;
 
 }
 
@@ -740,5 +779,77 @@ textarea {
 
     color: rgb(236, 61, 61);
     cursor: pointer;
+
+}
+
+                                                                                /* Footer */
+
+footer {
+
+    color: white;
+
+}
+
+.footer_social_media_title{
+
+    text-align: center;
+    font-family: 'Poppins';
+    padding-top: 40px;
+    text-decoration: underline;
+
+}
+
+.footer_social_media_icons {
+
+    padding: 25px;
+
+}
+
+.footer_social_media_icons a {
+
+    color: white;
+    font-size: 50px;
+    margin: 0 20px;
+
+}
+
+.footer_social_media_icons a:hover, .footer_mentions_legales a:hover {
+
+    color: #286B8D;
+    transition: 300ms ease-in-out;
+
+}
+
+.footer_social_media_icons div, .footer_mentions_legales div {
+
+    transition: 300ms ease-out;
+
+}
+
+.footer_social_media_icons div:hover, .footer_mentions_legales div:hover {
+
+    transform: scale(1.2);
+    transition: 300ms ease-in-out;
+
+}
+
+.footer_mentions_legales {
+
+    margin-bottom: 60px;
+
+}
+
+.footer_mentions_legales a {
+
+    font-family: 'Smooch', sans-serif;
+    margin: 30px;
+    font-size: 30px;
+    color: white;
+
+}
+
+.copyright {
+
+    font-family: 'Quantico', sans-serif;
 
 }

@@ -9,6 +9,7 @@
         const FILM = '/mcuwiki_mvc/media/film';
         const SERIE = '/mcuwiki_mvc/media/serie';
         const PERSONNAGE = '/mcuwiki_mvc/personnage';
+        const AFFICHER_PERSONNAGE = '/mcuwiki_mvc/personnage/afficher/';
 
         // LEXIQUE
         const LEXIQUE_ALL = '/mcuwiki_mvc/lexique/all';
