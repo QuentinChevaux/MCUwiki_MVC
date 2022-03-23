@@ -595,6 +595,26 @@ header, footer {
 
 }
 
+.fil_ariane {
+
+    margin: 10px;
+    font-size: 30px;
+    font-family: 'Quantico';
+
+}
+
+.fil_ariane a {
+
+    color: black;
+
+}
+
+.fil_ariane a:hover {
+
+    color: #D8041A;
+
+}
+
 .movie_div_page_personnage {
 
     margin: 20px;

@@ -14,7 +14,11 @@
 
             ?>
 
+            <div class="fil_ariane select_none">
+
                 <p><a href="<?= Config::INDEX ?>">Accueil</a> > <a href="<?= $_SESSION['lien'] ?>">Personnage</a> > <?= $personnage['nom'] ?></p>
+
+            </div>
 
     <?php
 
@@ -22,7 +26,11 @@
 
             ?>
 
+            <div class="fil_ariane select_none">
+
                 <p><a href="<?= Config::INDEX ?>">Accueil</a> > <a href="<?= $_SESSION['lien'] ?>"><?= $_SESSION['nom_media'] ?></a> > <?= $personnage['nom'] ?></p>
+
+            </div>
         
     <?php
 
