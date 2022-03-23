@@ -30,7 +30,7 @@
 
                 <div class="error_404_link_back">
 
-                    <p class="text_404">... blip back to the <a href='<?= Config::INDEX ?>'>Homepage</a>.</p>
+                    <p class="text_404">... blip back to the <a href='<?= Config::INDEX ?>' class="text_404_link">Homepage</a>.</p>
 
                 </div>
 
