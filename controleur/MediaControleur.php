@@ -42,9 +42,11 @@
 
             $media = MediaModel::fetchMediaBySlug($slug);
 
-            if($media) {
+            $personnages = MediaModel::fetchPersonnageByMedia($media[0]);
 
-                $parametres = compact('media');
+            if($media && $personnages) {
+
+                $parametres = compact('media', 'personnages');
 
                 $this -> affichage($parametres, 'afficher');
 

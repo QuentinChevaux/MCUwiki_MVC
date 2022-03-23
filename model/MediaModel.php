@@ -83,6 +83,20 @@
 
         }
 
+        static function fetchPersonnageByMedia($id) {
+
+            $connexion = PDO_custom::getInstance();
+
+            $requete = $connexion -> prepare('SELECT * FROM personnage_oeuvre 
+                                              LEFT JOIN personnage ON id = id_personnage
+                                              WHERE id_oeuvre = ?');
+
+            $requete -> execute([ $id ]);
+
+            return $requete -> fetchAll();
+
+        }
+
     }
 
 ?>

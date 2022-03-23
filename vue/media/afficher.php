@@ -6,9 +6,12 @@
 
     include './vue/common/header.php';
 
+    $_SESSION['lien'] = $_SERVER['REQUEST_URI'];
+    $_SESSION['nom_media'] = $media['titre'];
+
 ?>
 
-<div class="flex_center div_presentation_film">
+<div class="flex_center div_presentation_film select_none">
 
     <div class="div_image">
         
@@ -174,5 +177,69 @@
 
 </div>
 
+<div class="select_none">
 
+    <div class='liste_personnage_titre'>
+
+        <?php
+
+            if(isset($media['duree'])) {
+
+                ?>
+
+                    <h2>Liste des Personnages présent dans le film</h2>
+
+        <?php
+
+            } else if (isset($media['nbepisode'])) {
+
+                ?>
+
+                    <h2>Liste des Personnages présent dans la Serie</h2>
+
+        <?php
+
+            }
+
+        ?>
+
+    </div>
+
+        <div class="flex_center">
+
+            <?php
+
+                foreach($personnages as $personnage) {
+
+            ?>
+
+                <a href="<?= Config::AFFICHER_PERSONNAGE . $personnage['id'] ?>" class="card_personnage_link">
+
+                    <div class="card_personnage">
+
+                        <div>
+
+                            <h2><?= $personnage['nom'] ?></h2>
+
+                        </div>
+
+                        <div>
+
+                            <img src="/mcuwiki_mvc/assets/image/personnage/<?= $personnage['image_personnage'] ?>" alt="Image Personnage" width="150px" height="200px" />
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            <?php
+
+                }
+
+            ?>
+
+        </div>
+
+</div>
 
