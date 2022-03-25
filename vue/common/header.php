@@ -23,14 +23,14 @@
             <ul class="flex_center select_none">
     
                 <li><a href="<?= Config::INDEX ?>">Index</a></li>
-    
-                <li><a href="<?= Config::LEXIQUE ?>">Lexique</a></li>
-    
+                
                 <li><a href="<?= Config::FILM ?>">Films</a></li>
-    
+                
                 <li><a href="<?= Config::SERIE ?>">Series</a></li>
-
+                
                 <li><a href="<?= Config::PERSONNAGE ?>">Personnages</a></li>
+
+                <li><a href="<?= Config::LEXIQUE ?>">Lexique</a></li>
     
             </ul>
     
@@ -38,7 +38,7 @@
 
         <div class="title_div">
 
-            <a href="<?= Config::INDEX ?>" class="header_title"> <h1>MCUwiki</h1> </a>
+            <h1 class="header_title">MCUwiki</h1>
 
         </div>
     

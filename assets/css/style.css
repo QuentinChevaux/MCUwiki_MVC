@@ -86,11 +86,23 @@ header, footer {
     padding-top: 35px;
   
 }
+
+.header_nav ul {
+
+    padding-inline-start: 0px; 
+
+}
   
 .header_nav li {
   
     list-style: none;
   
+}
+
+.header_nav li:hover {
+
+    text-decoration: underline;
+
 }
 
 .header_nav a {
@@ -105,13 +117,12 @@ header, footer {
 
 .header_title {
 
-    margin-top: 20px;
     text-decoration: none;
   
     color: white;
     text-align: center;
-    font-family: Marvel;
-    font-size: 100px;
+    font-family: 'Marvel';
+    font-size: 200px;
   
 }
   
@@ -213,12 +224,27 @@ header, footer {
     background: none;
     border: 1px solid white;
     border-radius: 10px;
+
+    font-family: 'Quantico';
+
+    transition: 200ms ease-out;
   
 }
 
-.sort_button_div button:hover {
+.button_selected {
+
+    background: #D8041A !important;
+    box-shadow: 10px 5px 5px white;
+
+}
+
+.button_not_selected:hover {
 
     cursor: pointer;
+    transform: scale(1.1);
+    transition: 200ms ease-in;
+    
+    box-shadow: 10px 5px 5px white;
 
 }
 

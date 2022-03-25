@@ -50,9 +50,44 @@
 
                 <h2 class="select_none">Choissisez comment vous voulez triez les Medias: </h2>
 
-                    <button onclick='window.location.href="<?= Config::SORT_CHRONOLOGIE ?>"'>Ordre Chronologique</button>
+                <?php 
 
-                    <button onclick='window.location.href="<?= Config::INDEX ?>"'>Date de Sortie</button>
+                    if($_SERVER['REQUEST_URI'] == Config::SORT_CHRONOLOGIE) {
+
+                        ?>
+
+                            <button class='button_selected' onclick='window.location.href="<?= Config::SORT_CHRONOLOGIE ?>"'>Ordre Chronologique</button>
+
+                <?php
+
+                    } else {
+
+                        ?>
+
+                            <button class='button_not_selected' onclick='window.location.href="<?= Config::SORT_CHRONOLOGIE ?>"'>Ordre Chronologique</button>
+
+                <?php
+
+                    } if($_SERVER['REQUEST_URI'] == Config::INDEX) {
+
+                        ?>
+
+                            <button class="button_selected" onclick='window.location.href="<?= Config::INDEX ?>"'>Date de Sortie</button>
+
+                <?php 
+
+                    } else {
+
+                        ?>
+
+                            <button class='button_not_selected' onclick='window.location.href="<?= Config::INDEX ?>"'>Date de Sortie</button>
+
+                <?php
+
+                    }
+
+                ?>
+
 
             </div>
 
