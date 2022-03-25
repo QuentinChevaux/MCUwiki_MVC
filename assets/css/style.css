@@ -152,28 +152,29 @@ header, footer {
 
 }
 
-.fadeIn {
+.slide_up_fade_in {
 
-    animation: fadeIn ease-in .5s;
-    animation-iteration-count: 1;
+    animation: slideUpFadeIn ease-in-out .75s;
     animation-fill-mode: forwards;
 
 }
 
-@keyframes fadeIn {
+@keyframes slideUpFadeIn {
 
     0% {
 
-        opacity: 0;
+        transform: translateY(0);
+        /* opacity: 0; */
 
     }
 
     100% {
 
+        transform: translateY(-50px);
         opacity: 1;
 
     }
-    
+
 }
   
 .watcher {
@@ -232,6 +233,8 @@ header, footer {
     width: 50%;
     margin: auto;
     text-align: center;
+
+    padding: 30px;
   
 }
   
@@ -282,6 +285,7 @@ header, footer {
 .card_margin {
 
     margin: 50px;
+    opacity: 0;
 
 }
 

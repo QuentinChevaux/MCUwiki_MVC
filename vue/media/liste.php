@@ -91,7 +91,7 @@
 
             </div>
 
-            <div class="flex_center fadeIn">
+            <div class="flex_center">
         
                 <?php
                 
@@ -102,7 +102,7 @@
 
                 ?>
 
-                    <div class="card_margin">
+                    <div class="card_margin animations">
 
                         <a href="<?= Config::AFFICHER . htmlentities($media['slug']) ?>">
 
@@ -142,6 +142,8 @@
     </div>
 
 </section>
+
+<script src="/mcuwiki_mvc/assets/js/animations.js"></script>
 
 <?php
 
