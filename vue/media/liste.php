@@ -46,7 +46,7 @@
 
         <div>
 
-            <div class="sort_button_div">
+            <div class="sort_button_div" id="ordre">
 
                 <h2 class="select_none">Choissisez comment vous voulez triez les Medias: </h2>
 
@@ -56,7 +56,7 @@
 
                         ?>
 
-                            <button class='button_selected' onclick='window.location.href="<?= Config::SORT_CHRONOLOGIE ?>"'>Ordre Chronologique</button>
+                            <button class='button_selected' onclick='window.location.href="<?= Config::SORT_CHRONOLOGIE ?>"' disabled>Ordre Chronologique</button>
 
                 <?php
 
@@ -64,7 +64,7 @@
 
                         ?>
 
-                            <button class='button_not_selected' onclick='window.location.href="<?= Config::SORT_CHRONOLOGIE ?>"'>Ordre Chronologique</button>
+                            <button class='button_not_selected' onclick='window.location.href="<?= Config::SORT_CHRONOLOGIE ?>#ordre"'>Ordre Chronologique</button>
 
                 <?php
 
@@ -72,7 +72,7 @@
 
                         ?>
 
-                            <button class="button_selected" onclick='window.location.href="<?= Config::INDEX ?>"'>Date de Sortie</button>
+                            <button class="button_selected" onclick='window.location.href="<?= Config::INDEX ?>"' disabled>Date de Sortie</button>
 
                 <?php 
 
@@ -80,7 +80,7 @@
 
                         ?>
 
-                            <button class='button_not_selected' onclick='window.location.href="<?= Config::INDEX ?>"'>Date de Sortie</button>
+                            <button class='button_not_selected' onclick='window.location.href="<?= Config::INDEX ?>#ordre"'>Date de Sortie</button>
 
                 <?php
 
@@ -91,7 +91,7 @@
 
             </div>
 
-            <div class="flex_center">
+            <div class="flex_center fadeIn">
         
                 <?php
                 

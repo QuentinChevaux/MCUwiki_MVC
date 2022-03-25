@@ -9,7 +9,7 @@
     box-sizing: border-box;
   
 }
-  
+
 @font-face {
   
     font-family: 'Marvel';
@@ -96,12 +96,15 @@ header, footer {
 .header_nav li {
   
     list-style: none;
+    transition: 100ms ease-out;
   
 }
 
 .header_nav li:hover {
 
     text-decoration: underline;
+    transform: scale(1.1);
+    transition: 100ms ease-in;
 
 }
 
@@ -146,7 +149,31 @@ header, footer {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: fixed;
-  
+
+}
+
+.fadeIn {
+
+    animation: fadeIn ease-in .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes fadeIn {
+
+    0% {
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+    }
+    
 }
   
 .watcher {
@@ -154,6 +181,8 @@ header, footer {
     background-image: url(/MCUwiki_MVC/assets/image/common/watcher_opacity_35.png);
     background-repeat: no-repeat;
     background-size: 75%;
+
+    animation: none;
   
 }
 
