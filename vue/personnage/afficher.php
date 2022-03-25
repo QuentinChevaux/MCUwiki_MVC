@@ -42,10 +42,26 @@
 
     <div>
 
-        <h2><?= $personnage['nom'] ?></h2>
+        <h2 class="personnage_titre"><?= $personnage['nom'] ?></h2>
 
-        <h2><?= $personnage['acteur'] ?></h2>
+        <div class="flex_center">
 
-        <p><?= $personnage['biographie'] ?></p>
+            <div>
+
+                <img src="/mcuwiki_mvc/assets/image/personnage/<?= $personnage['image_personnage'] ?>" alt="">
+
+            </div>
+
+            <div>
+
+                <h2>Joué par : <span><?= $personnage['acteur'] ?></span></h2>
+
+                <p><?= $personnage['biographie'] ?></p>
+
+            </div>
+
+        </div>
+
+
 
     </div>

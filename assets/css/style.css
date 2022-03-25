@@ -621,6 +621,18 @@ header, footer {
 
 }
 
+/* Affichage Unitaire Personnage */
+
+.personnage_titre {
+
+    font-size: 80px;
+    color: #286B8D;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+
+}
+
                                                                     /* ADMIN + DASHBOARD PAGE */
 
 /* ADMIN LOGIN INTERFACE */
